@@ -49,6 +49,12 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
         }
+
+        //Death
+        if (col.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
     }
 
     //Trigger stuff
