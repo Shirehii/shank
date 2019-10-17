@@ -5,7 +5,6 @@ public class PlayerController : MonoBehaviour
     //Component Variables
     private Rigidbody2D rig;
     private AudioSource source;
-    private Animator anim;
 
     //Player Speeds
     public float moveSpeed = 150f;
@@ -13,6 +12,11 @@ public class PlayerController : MonoBehaviour
 
     //Ground check
     private bool isGrounded; //to check if the player is touching the ground
+
+    //Variables for player states, used in animation controller
+    public bool idle;
+    public bool moving;
+    public bool jumping;
 
     //Other variables
     private int points = 0;
@@ -26,23 +30,23 @@ public class PlayerController : MonoBehaviour
         //Get Components
         rig = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
-        anim = GetComponent<Animator>();
     }
 
     //Player Input
     void Update()
     {
+        moving = false;
         if (Input.GetAxis("Vertical") > 0 && isGrounded == true) //If the model is touching the ground and the player pressed the up button...
         {
             rig.AddForce(new Vector2(0, jumpSpeed)); //...Add a vertical force to the model
             isGrounded = false;
-            anim.Play("Jumping"); //And animate the model
+            jumping = true;
         }
 
         if (Input.GetAxis("Horizontal") != 0) //If the player presses any of the horizontal axis buttons...
         {
             rig.velocity = (new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rig.velocity.y)); //...move the model to the direction the player presses, while retaining the vertical velocity of the rigidbody
-            anim.Play("Moving"); //And animate the model
+            moving = true;
         }
 
         if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetAxisRaw("Horizontal") != lastDirectionPressed)
@@ -59,6 +63,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "Ground")
         {
             isGrounded = true;
+            jumping = false;
         }
     }
 
