@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Ground
   - Heal
+  - DialogueBox
+  - DialogueTrigger
   layers:
   - Default
   - TransparentFX

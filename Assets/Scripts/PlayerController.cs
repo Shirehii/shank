@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     private int lives = 3;
     private float lastDirectionPressed = 1;
 
+    public GameObject dialogueBox;
+    private bool watchedIntro = false;
+
 
     //Initializes when the script starts
     void Start()
@@ -97,6 +100,13 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log(lives);
+        }
+
+        //Dialogue
+        if (trigger.gameObject.tag == "DialogueTrigger" && !watchedIntro)
+        {
+            dialogueBox.SetActive(true);
+            watchedIntro = true;
         }
     }
 
