@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     private float lastDirectionPressed = 1;
 
     public GameObject dialogueBox;
+    public GameObject dialogueBoxSkip;
+    private int watchingIntro = 0; // had to use int instead of bool here :/ 1=true 0=false
     private bool watchedIntro = false;
 
 
@@ -39,23 +41,34 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         moving = false;
-        if (Input.GetAxis("Vertical") > 0 && isGrounded == true) //If the model is touching the ground and the player pressed the up button...
+        if (watchingIntro == 0) //If player isn't currently watching the level intro, then check for movement input
         {
-            rig.AddForce(new Vector2(0, jumpSpeed)); //...Add a vertical force to the model
-            isGrounded = false;
-            jumping = true;
+            if (Input.GetAxis("Vertical") > 0 && isGrounded == true) //If the model is touching the ground and the player pressed the up button...
+            {
+                rig.AddForce(new Vector2(0, jumpSpeed)); //...Add a vertical force to the model
+                isGrounded = false;
+                jumping = true;
+            }
+
+            if (Input.GetAxis("Horizontal") != 0) //If the player presses any of the horizontal axis buttons...
+            {
+                rig.velocity = (new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rig.velocity.y)); //...move the model to the direction the player presses, while retaining the vertical velocity of the rigidbody
+                moving = true;
+            }
+
+            if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetAxisRaw("Horizontal") != lastDirectionPressed) //For flipping the player sprite
+            {
+                Flip();
+                lastDirectionPressed = Input.GetAxisRaw("Horizontal");
+            }
         }
 
-        if (Input.GetAxis("Horizontal") != 0) //If the player presses any of the horizontal axis buttons...
+        if (watchingIntro == 1 && Input.GetKeyDown(KeyCode.S)) //For skipping the level intro
         {
-            rig.velocity = (new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rig.velocity.y)); //...move the model to the direction the player presses, while retaining the vertical velocity of the rigidbody
-            moving = true;
-        }
-
-        if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetAxisRaw("Horizontal") != lastDirectionPressed)
-        {
-            Flip();
-            lastDirectionPressed = Input.GetAxisRaw("Horizontal");
+            watchingIntro = 0;
+            dialogueBox.SetActive(false);
+            dialogueBoxSkip.SetActive(false);
+            watchedIntro = true;
         }
     }
 
@@ -106,7 +119,9 @@ public class PlayerController : MonoBehaviour
         if (trigger.gameObject.tag == "DialogueTrigger" && !watchedIntro)
         {
             dialogueBox.SetActive(true);
-            watchedIntro = true;
+            dialogueBoxSkip.SetActive(true);
+            watchingIntro = 1;
+            Destroy(trigger.gameObject);
         }
     }
 
