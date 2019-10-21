@@ -16,10 +16,10 @@ public class Dialogue : MonoBehaviour
         
     }
 
-    //  Prologue.
+    //  Prologue. -Gonzalo wins golden spatula but ricardo looks upset/jealous
     //
 
-    //  1. golden spatula gets stolen by ricardo
+    //  1. gonzalo and ricardo fight as ricardo steals the spatula
     //
 
     //  2. gonzalo tells papa alfonso
@@ -39,10 +39,10 @@ public class Dialogue : MonoBehaviour
     //A: ...
     //A: ...What a weird kiddo.
 
-    //  3. gonzalo mini-game?
+    //  3. gonzalo must get the keys to ricardo's kitchen
     //
 
-    //  4. gonzalo drops his keys in salsa
+    //  4. gonzalo drops the keys in salsa
     //
 
     //  5. boss fight vs ricardo
@@ -50,7 +50,7 @@ public class Dialogue : MonoBehaviour
     //G: You shall get away with this no more!
     //R: Oh, it's you, my dear friend Gonzalo...
     //R: It took you quite a while to find me, I was starting to lose hope.
-    //G: Mamma mia, can you believe it? On my way here, I found a giant pot filled with tomato salsa, and I accidentally dropped my keys in it, and had to dive in there to get them back--
+    //G: Mamma mia, can you believe it? On my way here, I found a giant pot filled with tomato salsa, and I accidentally dropped your kitchen's keys in it, and had to dive in there to get them back--
     //R: You
     //R: You did what
     //G: Huh?
@@ -59,6 +59,6 @@ public class Dialogue : MonoBehaviour
     //G: I shall take it back!
     //R: Then perish.
 
-    //  Epilogue.
+    //  Epilogue. -Gonzalo gets back spatula, ricardo goes on a long talk about friendship and they ??? become friends i guess
     //
 }
