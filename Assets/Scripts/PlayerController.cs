@@ -17,16 +17,19 @@ public class PlayerController : MonoBehaviour
     public bool idle;
     public bool moving;
     public bool jumping;
+    public bool dead = false;
 
     //Other variables
     private int points = 0;
-    private int lives = 3;
+    public int lives = 3;
     private float lastDirectionPressed = 1;
 
     public GameObject dialogueBox;
     public GameObject dialogueBoxSkip;
     private int watchingIntro = 0; // had to use int instead of bool here :/ 1=true 0=false
     private bool watchedIntro = false;
+
+    public GameObject gameOverPanel;
 
 
     //Initializes when the script starts
@@ -41,7 +44,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         moving = false;
-        if (watchingIntro == 0) //If player isn't currently watching the level intro, then check for movement input
+        if (watchingIntro == 0 && !dead) //If player isn't currently watching the level intro and isn't dead, then check for movement input
         {
             if (Input.GetAxis("Vertical") > 0 && isGrounded == true) //If the model is touching the ground and the player pressed the up button...
             {
@@ -99,7 +102,6 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(trigger.gameObject);
             lives += 1;
-            Debug.Log(lives);
         }
 
         //Death
@@ -107,12 +109,11 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(trigger.gameObject);
             lives -= 1;
-            Debug.Log(lives);
         }
         else if (trigger.gameObject.tag == "Enemy" && lives == 0)
         {
-            Destroy(gameObject);
-            Debug.Log(lives);
+            dead = true;
+            gameOverPanel.gameObject.SetActive(true);
         }
 
         //Dialogue

@@ -14,7 +14,11 @@ public class AnimationController : MonoBehaviour
 
     private void Update()
     {
-        if (player.jumping)
+        if (player.dead)
+        {
+            animator.Play("Dead");
+        }
+        else if (player.jumping)
         {
             animator.Play("Jumping");
         }

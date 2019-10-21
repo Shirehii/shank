@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         //Get Components
-        offset = new Vector3(0,0,-1);
+        offset = new Vector3(0,0,-5);
     }
 
     void LateUpdate()

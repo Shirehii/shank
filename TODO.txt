@@ -1,0 +1,17 @@
+- Finish Story writing
+- Implement story
+- Finish sprites
+- Make Levels
+- Extra features?
+- Audio selection
+- Pause Menu
+- Game Over screen
+- Lives System + health recovery
+- Points Display
+- Credits
+- Options menu
+- Saving system?
+- Fix player sprite?
+
+- Comment on code
+- List sources (lives video, troubleshooting threads on stackoverflow & unity forums)
