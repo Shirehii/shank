@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - CameraController
     - ClickToLoadScene
     - ClickToQuit
+    - Lives
     - PlayerController
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
@@ -126,6 +127,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 576}
     - Class: 114
+      Script: {instanceID: 9836}
+    - Class: 114
       Script: {instanceID: 9892}
     - Class: 114
       Script: {instanceID: 10714}
@@ -181,22 +184,42 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 576}
     - Class: 114
+      Script: {instanceID: 9672}
+    - Class: 114
+      Script: {instanceID: 9834}
+    - Class: 114
+      Script: {instanceID: 9836}
+    - Class: 114
+      Script: {instanceID: 9876}
+    - Class: 114
       Script: {instanceID: 9892}
     - Class: 114
       Script: {instanceID: 10276}
+    - Class: 114
+      Script: {instanceID: 10466}
+    - Class: 114
+      Script: {instanceID: 10644}
     - Class: 114
       Script: {instanceID: 10714}
     - Class: 114
       Script: {instanceID: 10958}
     - Class: 114
+      Script: {instanceID: 11122}
+    - Class: 114
       Script: {instanceID: 11492}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
@@ -240,15 +263,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 576}
     - Class: 114
-      Script: {instanceID: 9892}
+      Script: {instanceID: 9836}
     - Class: 114
-      Script: {instanceID: 10276}
+      Script: {instanceID: 9892}
     - Class: 114
       Script: {instanceID: 10714}
     - Class: 114
       Script: {instanceID: 10958}
-    - Class: 114
-      Script: {instanceID: 11492}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -299,15 +320,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 576}
     - Class: 114
-      Script: {instanceID: 9892}
+      Script: {instanceID: 9836}
     - Class: 114
-      Script: {instanceID: 10276}
+      Script: {instanceID: 9892}
     - Class: 114
       Script: {instanceID: 10714}
     - Class: 114
       Script: {instanceID: 10958}
-    - Class: 114
-      Script: {instanceID: 11492}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -434,7 +453,7 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: e9160c50aac9eb64ebab9b604341b388
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Lives
@@ -470,7 +489,7 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: c771a6fdffb39aa096be27ccfcd4e4db
+      Hash: 60d1181a866c3471c67301c2f7e68bc5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -842,4 +861,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/3.unity
   - Assets/Scenes/4.unity
   - Assets/Scenes/5.unity
-  playerPath: D:/yeet/shank/Builds/shank.exe
+  playerPath: C:/Users/AMARGA200/Documents/GitHub/shank/Builds/shank.exe

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,7 +25,8 @@ public class PlayerController : MonoBehaviour
     private float lastDirectionPressed = 1;
 
     //UI variables
-    public GameObject PausePanel;
+    public GameObject pausePanel;
+    public Text pauseText;
     public GameObject dialogueBox;
     public GameObject dialogueBoxSkip;
     private int watchingIntro = 0; // had to use int instead of bool here :/ 1=true 0=false
@@ -69,21 +71,24 @@ public class PlayerController : MonoBehaviour
         if (watchingIntro == 1 && Input.GetKeyDown(KeyCode.S)) //For skipping the level intro
         {
             watchingIntro = 0;
+            rig.bodyType = RigidbodyType2D.Dynamic;
             dialogueBox.SetActive(false);
             dialogueBoxSkip.SetActive(false);
             watchedIntro = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.P) && !dead && !paused) //pausing
+        if (Input.GetKeyDown(KeyCode.P) && !dead && !paused) //For Pausing
         {
             paused = true;
-            PausePanel.SetActive(true);
+            pausePanel.SetActive(true);
+            pauseText.text = "Press P to Unpause";
             rig.bodyType = RigidbodyType2D.Static;
         }
-        else if (Input.GetKeyDown(KeyCode.P) && paused) //unpausing
+        else if (Input.GetKeyDown(KeyCode.P) && paused) //For Unpausing
         {
             paused = false;
-            PausePanel.SetActive(false);
+            pausePanel.SetActive(false);
+            pauseText.text = "Press P to Pause";
             rig.bodyType = RigidbodyType2D.Dynamic;
         }
     }
@@ -135,6 +140,7 @@ public class PlayerController : MonoBehaviour
             dialogueBox.SetActive(true);
             dialogueBoxSkip.SetActive(true);
             watchingIntro = 1;
+            rig.bodyType = RigidbodyType2D.Static;
             Destroy(trigger.gameObject);
         }
     }
