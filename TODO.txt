@@ -1,5 +1,4 @@
-CURRENTLY:
-- Pause Menu (freeze everything)
+- Game Over screen
 
 - Finish Story writing
 - Implement story
@@ -7,7 +6,6 @@ CURRENTLY:
 - Make Levels
 - Extra features?
 - Audio selection
-- Game Over screen
 - Points Display
 - Credits
 - Options menu

@@ -14,21 +14,29 @@ public class AnimationController : MonoBehaviour
 
     private void Update()
     {
-        if (player.dead)
+        if (!player.paused)
         {
-            animator.Play("Dead");
-        }
-        else if (player.jumping)
-        {
-            animator.Play("Jumping");
-        }
-        else if (player.moving)
-        {
-            animator.Play("Moving");
+            animator.speed = 1;
+            if (player.dead)
+            {
+                animator.Play("Dead");
+            }
+            else if (player.jumping)
+            {
+                animator.Play("Jumping");
+            }
+            else if (player.moving)
+            {
+                animator.Play("Moving");
+            }
+            else
+            {
+                animator.Play("Idle");
+            }
         }
         else
         {
-            animator.Play("Idle");
+            animator.speed = 0;
         }
     }
 }
