@@ -20,7 +20,16 @@ public class Dialogue : MonoBehaviour
     //
 
     //  1. gonzalo and ricardo fight as ricardo steals the spatula
-    //
+    //G: Ricardo! What are you doing?!
+    //G: That Golden Spatula is mine!
+    //R: Ay dios mio, just get a regular spatula.
+    //R: You would use this to cook anyway, we both know you'd just frame it on the wall and never use it.
+    //G: ...that's what trophies are for, Ricardo. To sit on the shelf.
+    //G: *gasp* Are you saying that you were thinking of using that Spatula to actually cook?!
+    //R: Uhh...
+    //R: I guess I should leave now.
+    //G: No! Ricardo!
+    //G: I have to get the Golden Spatula back!
 
     //  2. gonzalo tells papa alfonso
     //G: ...!
@@ -30,20 +39,25 @@ public class Dialogue : MonoBehaviour
     //A: Whatsa say sonnie??
     //G: Do you remember papa? When I was younger and you'd teach me all kinds of tricks in the kitchen? I wanted to make you feel proud of me papa...
     //G: I won the Golden Spatula papa, but that wicked Ricardo stole it away from me!
-    //G: I don't know what to do now, he's probably celebrating the success of his evil plan!
+    //G: He's probably using it to cook right now! He's going to get it dirty!
     //A: A little bit louder sonnie!
     //G: ...You're right.
-    //G: I shouldn't sit here and weep over my loss. I should go take it back from him! At all costs!
+    //G: I shouldn't just sit here, I should go take it back from him! At all costs!
     //G: Thank you, papa Alfonso. You're my hero.
     //G: I'm going to take the Golden Spatula back and make you proud!
     //A: ...
     //A: ...What a weird kiddo.
 
     //  3. gonzalo must get the keys to ricardo's kitchen
-    //
+    //G: Right, so Ricardo must be locked up in his kitchen right now...
+    //G: That means I should find the keys to his kitchen!
+    //G: But where would Ricardo place his keys?
+    //G: ...Guess I'll look around.
 
     //  4. gonzalo drops the keys in salsa
-    //
+    //G: !
+    //G: Mamma mia! The keys!
+    //G: I have to get them back!
 
     //  5. boss fight vs ricardo
     //G: This is it, Ricardo.

@@ -1,5 +1,8 @@
+CURRENTLY:
+- importing new graphics assets and replacing old ones (tiles, food)
+
 FIX:
-- Game Over Text
+- fix bumpy alfonso movement
 
 - Finish Story writing
 - Implement story
@@ -8,10 +11,18 @@ FIX:
 - Extra features?
 - Audio selection
 - Points Display
-- Credits
+- Credits (i was very hungry when making this game) (https://opengameart.org/ for sprites)
 - Options menu
 - Saving system?
 - Fix player sprite?
 
 - Comment on code
 - List sources (lives video, troubleshooting threads on stackoverflow & unity forums)
+
+
+LEVEL THEMES:
+1- Competition room
+2- Alfonso's kitchen
+3- Key room??
+4- Salsa pot
+5- Ricardo's kitchen
