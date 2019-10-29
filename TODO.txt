@@ -1,5 +1,8 @@
 CURRENTLY:
-- Pause Menu (freeze everything)
+- importing new graphics assets and replacing old ones (tiles, food)
+
+FIX:
+- fix bumpy alfonso movement
 
 - Finish Story writing
 - Implement story
@@ -7,13 +10,19 @@ CURRENTLY:
 - Make Levels
 - Extra features?
 - Audio selection
-- Game Over screen
 - Points Display
-- Credits
+- Credits (i was very hungry when making this game) (https://opengameart.org/ for sprites)
 - Options menu
 - Saving system?
 - Fix player sprite?
-- MAKE PLAYER STOP COMPLETELY WHEN ENTERING DIALOGUE TRIGGER
 
 - Comment on code
 - List sources (lives video, troubleshooting threads on stackoverflow & unity forums)
+
+
+LEVEL THEMES:
+1- Competition room
+2- Alfonso's kitchen
+3- Key room??
+4- Salsa pot
+5- Ricardo's kitchen

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public bool moving;
     public bool jumping;
     public bool dead = false;
-    public int paused = -1; // had to use int instead of bool here :/ 1=true -1=false
+    public bool paused = false;
     private bool isGrounded; //to check if the player is touching the ground
 
     //Mechanics variables
@@ -24,7 +25,8 @@ public class PlayerController : MonoBehaviour
     private float lastDirectionPressed = 1;
 
     //UI variables
-    public GameObject PausePanel;
+    public GameObject pausePanel;
+    public Text pauseText;
     public GameObject dialogueBox;
     public GameObject dialogueBoxSkip;
     private int watchingIntro = 0; // had to use int instead of bool here :/ 1=true 0=false
@@ -44,7 +46,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         moving = false;
-        if (watchingIntro == 0 && !dead && paused == -1) //If player isn't currently watching the level intro, isn't dead and isn't paused, then check for movement input
+        if (watchingIntro == 0 && !dead && paused == false) //If player isn't currently watching the level intro, isn't dead and isn't paused, then check for movement input
         {
             if (Input.GetAxis("Vertical") > 0 && isGrounded == true) //If the model is touching the ground and the player pressed the up button...
             {
@@ -69,25 +71,26 @@ public class PlayerController : MonoBehaviour
         if (watchingIntro == 1 && Input.GetKeyDown(KeyCode.S)) //For skipping the level intro
         {
             watchingIntro = 0;
+            rig.bodyType = RigidbodyType2D.Dynamic;
             dialogueBox.SetActive(false);
             dialogueBoxSkip.SetActive(false);
             watchedIntro = true;
         }
 
-        //if (Input.GetKeyDown(KeyCode.P) && !dead)
-        //{
-        //    paused *= -1;
-        //    if (paused == 1)
-        //    {
-        //        PausePanel.SetActive(true);
-        //        rig.bodyType = RigidbodyType2D.Static;
-        //    }
-        //    else
-        //    {
-        //        PausePanel.SetActive(false);
-        //        rig.bodyType = RigidbodyType2D.Dynamic;
-        //    }
-        //}
+        if (Input.GetKeyDown(KeyCode.P) && !dead && !paused) //For Pausing
+        {
+            paused = true;
+            pausePanel.SetActive(true);
+            pauseText.text = "Press P to Unpause";
+            rig.bodyType = RigidbodyType2D.Static;
+        }
+        else if (Input.GetKeyDown(KeyCode.P) && paused) //For Unpausing
+        {
+            paused = false;
+            pausePanel.SetActive(false);
+            pauseText.text = "Press P to Pause";
+            rig.bodyType = RigidbodyType2D.Dynamic;
+        }
     }
 
     //Collision stuff
@@ -137,6 +140,7 @@ public class PlayerController : MonoBehaviour
             dialogueBox.SetActive(true);
             dialogueBoxSkip.SetActive(true);
             watchingIntro = 1;
+            rig.bodyType = RigidbodyType2D.Static;
             Destroy(trigger.gameObject);
         }
     }

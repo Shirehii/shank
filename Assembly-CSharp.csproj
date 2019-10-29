@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\Lives.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <None Include="Assets\Graphics\Atlas2\Attribution2.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/yeet/shank/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
