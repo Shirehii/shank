@@ -1,5 +1,6 @@
 CURRENTLY:
 - importing new graphics assets and replacing old ones (tiles, food)
+- START ADDING PROPER GRAPHICS YOU BIMBO
 
 FIX:
 - fix bumpy alfonso movement
