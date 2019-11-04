@@ -1,19 +1,87 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //Components and stuff
+    private Rigidbody2D rig;
+
+    //For checking the scene name
+    private string level;
+    private Scene scene;
+
+    //Dialogue boxes and checking if the player has watched the intro or not
+    public GameObject dialogueBox;
+    public GameObject dialogueBoxSkip;
+    public int watchingIntro = 0; // had to use int instead of bool here :/ 1=true 0=false
+    private bool watchedIntro = false;
+
+    //script haha
+    public PlayerController player;
+
+    //For animation purposes
+    private Vector3 startingPosition;
+    private Vector3 targetPosition;
+    private float timeToReachTarget;
+
+    private void Start()
     {
-        
+        //Get components
+        rig = GetComponent<Rigidbody2D>();
+
+        scene = SceneManager.GetActiveScene();
+        level = scene.name;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (watchingIntro == 1 && Input.GetKeyDown(KeyCode.S)) //For skipping the level intro
+        {
+            watchingIntro = 0;
+            rig.bodyType = RigidbodyType2D.Dynamic;
+            dialogueBox.SetActive(false);
+            dialogueBoxSkip.SetActive(false);
+            watchedIntro = true;
+        }
+    }
+
+    //Trigger stuff
+    void OnTriggerEnter2D(Collider2D trigger)
+    {
+        //Dialogue
+        if (trigger.gameObject.tag == "DialogueTrigger" && !watchedIntro)
+        {
+            dialogueBox.SetActive(true);
+            dialogueBoxSkip.SetActive(true);
+            watchingIntro = 1;
+            rig.bodyType = RigidbodyType2D.Static;
+            Destroy(trigger.gameObject);
+            startingPosition = transform.position;
+            switch (level)
+            {
+                case "1":
+                    //gonzalo and ricardo fight as ricardo steals the spatula
+                    break;
+                case "2":
+                    //gonzalo tells papa alfonso
+                    break;
+                case "3":
+                    //gonzalo must get the keys to ricardo's kitchen
+                    break;
+                case "4":
+                    //gonzalo drops the keys in salsa
+                    player.moving = true;
+                    targetPosition = startingPosition + new Vector3(5,0,0);
+                    timeToReachTarget = 4f;
+                    transform.position = Vector3.Lerp(startingPosition, targetPosition, timeToReachTarget);
+                    break;
+                case "5":
+                    //boss fight vs ricardo
+                    break;
+            }
+        }
     }
 
     //  Prologue. -Gonzalo wins golden spatula but ricardo looks upset/jealous

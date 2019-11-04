@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public bool dead = false;
     public bool paused = false;
     private bool isGrounded; //to check if the player is touching the ground
+    
+    public Dialogue dialogue;
 
     //Mechanics variables
     private int points = 0;
@@ -27,10 +29,6 @@ public class PlayerController : MonoBehaviour
     //UI variables
     public GameObject pausePanel;
     public Text pauseText;
-    public GameObject dialogueBox;
-    public GameObject dialogueBoxSkip;
-    private int watchingIntro = 0; // had to use int instead of bool here :/ 1=true 0=false
-    private bool watchedIntro = false;
     public GameObject gameOverPanel;
 
 
@@ -45,10 +43,9 @@ public class PlayerController : MonoBehaviour
     //Player Input
     void Update()
     {
-        moving = false;
-        if (watchingIntro == 0 && !dead && paused == false) //If player isn't currently watching the level intro, isn't dead and isn't paused, then check for movement input
+        if (dialogue.watchingIntro == 0 && !dead && !paused) //If player isn't currently watching the level intro, isn't dead and isn't paused, then check for movement input
         {
-            if (Input.GetAxis("Vertical") > 0 && isGrounded == true) //If the model is touching the ground and the player pressed the up button...
+            if (Input.GetAxis("Vertical") > 0 && isGrounded) //If the model is touching the ground and the player pressed the up button...
             {
                 rig.AddForce(new Vector2(0, jumpSpeed)); //...Add a vertical force to the model
                 isGrounded = false;
@@ -66,15 +63,11 @@ public class PlayerController : MonoBehaviour
                 Flip();
                 lastDirectionPressed = Input.GetAxisRaw("Horizontal");
             }
-        }
 
-        if (watchingIntro == 1 && Input.GetKeyDown(KeyCode.S)) //For skipping the level intro
-        {
-            watchingIntro = 0;
-            rig.bodyType = RigidbodyType2D.Dynamic;
-            dialogueBox.SetActive(false);
-            dialogueBoxSkip.SetActive(false);
-            watchedIntro = true;
+            if (Input.GetAxisRaw("Horizontal") == 0)
+            {
+                moving = false;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.P) && !dead && !paused) //For Pausing
@@ -132,16 +125,6 @@ public class PlayerController : MonoBehaviour
         {
             dead = true;
             gameOverPanel.gameObject.SetActive(true);
-        }
-
-        //Dialogue
-        if (trigger.gameObject.tag == "DialogueTrigger" && !watchedIntro)
-        {
-            dialogueBox.SetActive(true);
-            dialogueBoxSkip.SetActive(true);
-            watchingIntro = 1;
-            rig.bodyType = RigidbodyType2D.Static;
-            Destroy(trigger.gameObject);
         }
     }
 
