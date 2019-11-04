@@ -26,6 +26,8 @@ public class Dialogue : MonoBehaviour
     private Vector3 targetPosition;
     private float timeToReachTarget;
 
+    float t; /////////////////////////////////////////////////////////
+
     private void Start()
     {
         //Get components
@@ -33,6 +35,9 @@ public class Dialogue : MonoBehaviour
 
         scene = SceneManager.GetActiveScene();
         level = scene.name;
+
+
+        startingPosition = targetPosition = transform.position; /////////////////////////////////////////////////////////
     }
 
     private void Update()
@@ -45,6 +50,17 @@ public class Dialogue : MonoBehaviour
             dialogueBoxSkip.SetActive(false);
             watchedIntro = true;
         }
+
+        t += Time.deltaTime / timeToReachTarget; /////////////////////////////////////////////////////////
+        transform.position = Vector3.Lerp(startingPosition, targetPosition, t); /////////////////////////////////////////////////////////
+    }
+
+    public void SetDestination(Vector3 destination, float time) /////////////////////////////////////////////////////////
+    { /////////////////////////////////////////////////////////
+        t = 0; /////////////////////////////////////////////////////////
+        startingPosition = transform.position; /////////////////////////////////////////////////////////
+        timeToReachTarget = time; /////////////////////////////////////////////////////////
+        targetPosition = destination; /////////////////////////////////////////////////////////
     }
 
     //Trigger stuff
@@ -70,12 +86,10 @@ public class Dialogue : MonoBehaviour
                 case "3":
                     //gonzalo must get the keys to ricardo's kitchen
                     break;
-                case "4":
-                    //gonzalo drops the keys in salsa
+                case "4": //gonzalo drops the keys in salsa
                     player.moving = true;
-                    targetPosition = startingPosition + new Vector3(5,0,0);
-                    timeToReachTarget = 4f;
-                    transform.position = Vector3.Lerp(startingPosition, targetPosition, timeToReachTarget);
+                    targetPosition = startingPosition + new Vector3(10,0,0); /////////////////////////////////////////////////////////
+                    timeToReachTarget = 4f; /////////////////////////////////////////////////////////
                     break;
                 case "5":
                     //boss fight vs ricardo
@@ -83,6 +97,9 @@ public class Dialogue : MonoBehaviour
             }
         }
     }
+
+
+
 
     //  Prologue. -Gonzalo wins golden spatula but ricardo looks upset/jealous
     //
