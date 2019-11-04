@@ -3140,7 +3140,7 @@ GameObject:
   - component: {fileID: 401017550}
   - component: {fileID: 401017544}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerAnim
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3519,7 +3519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc6a531039898e3459cd735b99d2a70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerModel: {fileID: 455208123}
   dialogueBox: {fileID: 39833305}
   dialogueBoxSkip: {fileID: 191835743}
   watchingIntro: 0
@@ -3553,7 +3552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455208123}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.6, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 401017545}
@@ -4670,7 +4669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093587592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.05, y: -0.65, z: 0}
+  m_LocalPosition: {x: 4.05, y: -0.55, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 1707268717}
@@ -5863,7 +5862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851741848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.83, y: -24.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 551231809}

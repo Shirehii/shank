@@ -7,6 +7,7 @@ public class Dialogue : MonoBehaviour
 {
     //Components and stuff
     private Rigidbody2D rig;
+    private Animator animator;
 
     //For checking the scene name
     private string level;
@@ -22,45 +23,43 @@ public class Dialogue : MonoBehaviour
     public PlayerController player;
 
     //For animation purposes
+    //For moving
     private Vector3 startingPosition;
     private Vector3 targetPosition;
     private float timeToReachTarget;
-
-    float t; /////////////////////////////////////////////////////////
+    private float t = 0; /////////////////////////////////////////////////////////
+    private bool moveSmoothly = false;
 
     private void Start()
     {
         //Get components
         rig = GetComponent<Rigidbody2D>();
+        animator = GameObject.Find("PlayerAnim").GetComponent<Animator>();
+        if (animator = null)
+        {
+            Debug.Log("can't find animator");
+        }
 
         scene = SceneManager.GetActiveScene();
         level = scene.name;
-
-
-        startingPosition = targetPosition = transform.position; /////////////////////////////////////////////////////////
     }
 
     private void Update()
     {
         if (watchingIntro == 1 && Input.GetKeyDown(KeyCode.S)) //For skipping the level intro
         {
-            watchingIntro = 0;
-            rig.bodyType = RigidbodyType2D.Dynamic;
-            dialogueBox.SetActive(false);
-            dialogueBoxSkip.SetActive(false);
-            watchedIntro = true;
+            ExitIntro();
         }
 
-        t += Time.deltaTime / timeToReachTarget; /////////////////////////////////////////////////////////
-        transform.position = Vector3.Lerp(startingPosition, targetPosition, t); /////////////////////////////////////////////////////////
-    }
-
-    public void SetDestination(Vector3 destination, float time) /////////////////////////////////////////////////////////
-    { /////////////////////////////////////////////////////////
-        t = 0; /////////////////////////////////////////////////////////
-        startingPosition = transform.position; /////////////////////////////////////////////////////////
-        timeToReachTarget = time; /////////////////////////////////////////////////////////
-        targetPosition = destination; /////////////////////////////////////////////////////////
+        if (moveSmoothly)
+        {
+            t += Time.deltaTime / timeToReachTarget; /////////////////////////////////////////////////////////
+            transform.position = Vector3.Lerp(startingPosition, targetPosition, t); /////////////////////////////////////////////////////////
+            if (transform.position == targetPosition)
+            {
+                player.dead = true;
+            }
+        }
     }
 
     //Trigger stuff
@@ -69,11 +68,9 @@ public class Dialogue : MonoBehaviour
         //Dialogue
         if (trigger.gameObject.tag == "DialogueTrigger" && !watchedIntro)
         {
-            dialogueBox.SetActive(true);
-            dialogueBoxSkip.SetActive(true);
-            watchingIntro = 1;
-            rig.bodyType = RigidbodyType2D.Static;
+            IntroTriggered();
             Destroy(trigger.gameObject);
+
             startingPosition = transform.position;
             switch (level)
             {
@@ -88,8 +85,9 @@ public class Dialogue : MonoBehaviour
                     break;
                 case "4": //gonzalo drops the keys in salsa
                     player.moving = true;
-                    targetPosition = startingPosition + new Vector3(10,0,0); /////////////////////////////////////////////////////////
-                    timeToReachTarget = 4f; /////////////////////////////////////////////////////////
+                    targetPosition = startingPosition + new Vector3(5, 0, 0);
+                    timeToReachTarget = 2f;
+                    moveSmoothly = true;
                     break;
                 case "5":
                     //boss fight vs ricardo
@@ -98,8 +96,23 @@ public class Dialogue : MonoBehaviour
         }
     }
 
+    private void IntroTriggered()
+    {
+        dialogueBox.SetActive(true);
+        dialogueBoxSkip.SetActive(true);
+        watchingIntro = 1;
+        rig.bodyType = RigidbodyType2D.Static;
+    }
 
-
+    private void ExitIntro()
+    {
+        watchingIntro = 0;
+        rig.bodyType = RigidbodyType2D.Dynamic;
+        dialogueBox.SetActive(false);
+        dialogueBoxSkip.SetActive(false);
+        watchedIntro = true;
+        moveSmoothly = false;
+    }
 
     //  Prologue. -Gonzalo wins golden spatula but ricardo looks upset/jealous
     //
