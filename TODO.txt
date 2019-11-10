@@ -4,6 +4,7 @@ CURRENTLY:
 - Finish Story writing
 - Implement story
 - Make Levels
+- Implement sounds (missing: walking, bgm)
 
 FIX:
 - fix bumpy alfonso movement
@@ -13,7 +14,6 @@ FIX:
 - Clean up code and make UML diagrams
 - Finish sprites
 - Extra features?
-- Audio selection
 - Points Display
 - Credits (i was very hungry when making this game) (https://opengameart.org/ for sprites)
 - Options menu

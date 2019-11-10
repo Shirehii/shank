@@ -3384,9 +3384,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heal: {fileID: 8300000, guid: 46f7f5bd78a553c4180387819e7a9bac, type: 3}
-  damage: {fileID: 0}
-  death: {fileID: 0}
+  damage: {fileID: 8300000, guid: 1d37cbc3ca3e4784bb5e9b0a99f33f31, type: 3}
+  death: {fileID: 8300000, guid: 21c9084bad5fa2c409c55d4613100235, type: 3}
   point: {fileID: 8300000, guid: 8237c97f57be7ab43b2a4cb03c56907b, type: 3}
+  walking: {fileID: 8300000, guid: 8e480cfdad77c5842864d54ae51ba7ed, type: 3}
+  jump: {fileID: 8300000, guid: 1997c7102dca43e43acd5801a7e107cf, type: 3}
   moveSpeed: 20
   jumpSpeed: 1000
   idle: 0
@@ -3426,7 +3428,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

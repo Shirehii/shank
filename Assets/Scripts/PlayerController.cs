@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip damage;
     public AudioClip death;
     public AudioClip point;
+    public AudioClip walking;
+    public AudioClip jump;
 
     //Player Speeds
     public float moveSpeed = 150f;
@@ -55,6 +57,7 @@ public class PlayerController : MonoBehaviour
                 rig.AddForce(new Vector2(0, jumpSpeed)); //...Add a vertical force to the model
                 isGrounded = false;
                 jumping = true;
+                source.PlayOneShot(jump);
             }
 
             if (Input.GetAxis("Horizontal") != 0) //If the player presses any of the horizontal axis buttons...
