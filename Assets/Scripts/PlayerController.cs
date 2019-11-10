@@ -7,6 +7,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rig;
     private AudioSource source;
 
+    public AudioClip heal;
+    public AudioClip damage;
+    public AudioClip death;
+    public AudioClip point;
+
     //Player Speeds
     public float moveSpeed = 150f;
     public float jumpSpeed = 350f;
@@ -106,6 +111,7 @@ public class PlayerController : MonoBehaviour
             points += 1;
             Debug.Log(points);
             Destroy(trigger.gameObject);
+            source.PlayOneShot(point);
         }
 
         //Adding HP
@@ -113,6 +119,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(trigger.gameObject);
             lives += 1;
+            source.PlayOneShot(heal);
         }
 
         //Death
@@ -120,11 +127,13 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(trigger.gameObject);
             lives -= 1;
+            source.PlayOneShot(damage);
         }
         else if (trigger.gameObject.tag == "Enemy" && lives == 0)
         {
             dead = true;
             gameOverPanel.gameObject.SetActive(true);
+            source.PlayOneShot(death);
         }
     }
 

@@ -3383,6 +3383,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7942402d7ffae74280d8c3280804c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heal: {fileID: 8300000, guid: 46f7f5bd78a553c4180387819e7a9bac, type: 3}
+  damage: {fileID: 0}
+  death: {fileID: 0}
+  point: {fileID: 8300000, guid: 8237c97f57be7ab43b2a4cb03c56907b, type: 3}
   moveSpeed: 20
   jumpSpeed: 1000
   idle: 0
