@@ -2,13 +2,14 @@ CURRENTLY:
 - importing new graphics assets and replacing old ones (tiles, food)
 - START ADDING PROPER GRAPHICS YOU BIMBO
 - Finish Story writing
-- Implement story
+- Implement story [NOT NOW]
 - Make Levels
 
 FIX:
 - fix bumpy alfonso movement
 - fix krispy tiles
 - fix points always defaulting to a certain position
+- check code in dialogue script, make sure it's original
 
 - Clean up code and make UML diagrams
 - Finish sprites

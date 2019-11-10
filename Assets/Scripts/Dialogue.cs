@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
     //Components and stuff
     private Rigidbody2D rig;
     private Animator animator;
+    private GameObject keys;
 
     //For checking the scene name
     private string level;
@@ -39,6 +40,7 @@ public class Dialogue : MonoBehaviour
         {
             Debug.Log("can't find animator");
         }
+        keys = GameObject.Find("Keys");
 
         scene = SceneManager.GetActiveScene();
         level = scene.name;
@@ -58,6 +60,8 @@ public class Dialogue : MonoBehaviour
             if (transform.position == targetPosition)
             {
                 player.dead = true;
+                moveSmoothly = false;
+                keys.transform.position = new Vector3(0,-2,0); //LEVEL 4 INTRO CONTINUE HERE
             }
         }
     }
