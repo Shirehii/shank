@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip damage;
     public AudioClip death;
     public AudioClip point;
-    public AudioClip walking;
+    public AudioClip walk;
     public AudioClip jump;
 
     //Player Speeds
@@ -64,6 +64,10 @@ public class PlayerController : MonoBehaviour
             {
                 rig.velocity = (new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rig.velocity.y)); //...move the model to the direction the player presses, while retaining the vertical velocity of the rigidbody
                 moving = true;
+                if (isGrounded && !source.isPlaying)
+                {
+                    source.PlayOneShot(walk);
+                }
             }
 
             if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetAxisRaw("Horizontal") != lastDirectionPressed) //For flipping the player sprite

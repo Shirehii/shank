@@ -4,7 +4,7 @@ CURRENTLY:
 - Finish Story writing
 - Implement story
 - Make Levels
-- Implement sounds (missing: walking, bgm)
+- Implement sounds (missing: walking, bgm, ui)
 
 FIX:
 - fix bumpy alfonso movement
