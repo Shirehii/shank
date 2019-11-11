@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public GameObject pausePanel;
     public Text pauseText;
     public GameObject gameOverPanel;
+    public GameObject winPanel;
 
 
     //Initializes when the script starts
@@ -141,6 +142,14 @@ public class PlayerController : MonoBehaviour
             dead = true;
             gameOverPanel.gameObject.SetActive(true);
             source.PlayOneShot(death);
+        }
+
+        //Winning
+        if (trigger.gameObject.tag == "Win" && !dead)
+        {
+            source.PlayOneShot(damage);
+            winPanel.gameObject.SetActive(true);
+            rig.bodyType = RigidbodyType2D.Static;
         }
     }
 
