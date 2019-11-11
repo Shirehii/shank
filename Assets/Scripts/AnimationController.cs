@@ -14,7 +14,7 @@ public class AnimationController : MonoBehaviour
 
     private void Update()
     {
-        if (!player.paused)
+        if (!player.paused && !player.won)
         {
             animator.speed = 1;
             if (player.dead)

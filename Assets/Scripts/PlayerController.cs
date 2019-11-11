@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public bool jumping;
     public bool dead = false;
     public bool paused = false;
+    public bool won = false;
     private bool isGrounded; //to check if the player is touching the ground
     
     public Dialogue dialogue;
@@ -51,7 +52,7 @@ public class PlayerController : MonoBehaviour
     //Player Input
     void Update()
     {
-        if (dialogue.watchingIntro == 0 && !dead && !paused) //If player isn't currently watching the level intro, isn't dead and isn't paused, then check for movement input
+        if (dialogue.watchingIntro == 0 && !dead && !paused && !won) //If player isn't currently watching the level intro, isn't dead and isn't paused, then check for movement input
         {
             if (Input.GetAxis("Vertical") > 0 && isGrounded) //If the model is touching the ground and the player pressed the up button...
             {
@@ -150,6 +151,7 @@ public class PlayerController : MonoBehaviour
             source.PlayOneShot(damage);
             winPanel.gameObject.SetActive(true);
             rig.bodyType = RigidbodyType2D.Static;
+            won = true;
         }
     }
 

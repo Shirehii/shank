@@ -1,5 +1,4 @@
 CURRENTLY:
-- importing new graphics assets and replacing old ones (tiles, food)
 - START ADDING PROPER GRAPHICS YOU BIMBO
 - Finish Story writing
 - Implement story [NOT NOW]
@@ -8,7 +7,6 @@ CURRENTLY:
 FIX:
 - fix bumpy alfonso movement
 - fix krispy tiles
-- fix points always defaulting to a certain position
 - check code in dialogue script, make sure it's original
 - FIX JUMPING OH MY GOD
 

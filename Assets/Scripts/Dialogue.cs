@@ -157,6 +157,7 @@ public class Dialogue : MonoBehaviour
     //G: ...Guess I'll look around.
 
     //  4. gonzalo drops the keys in salsa
+    //G: Whoopsie daisy!
     //G: !
     //G: Mamma mia! The keys!
     //G: I have to get them back!
