@@ -12,6 +12,7 @@ TagManager:
   - DialogueTrigger
   - Pause
   - Win
+  - DestroyWall
   layers:
   - Default
   - TransparentFX
