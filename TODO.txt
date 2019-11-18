@@ -1,4 +1,5 @@
 CURRENTLY:
+- Keep adding collectibles on level 3
 - START ADDING PROPER GRAPHICS YOU BIMBO
 - Finish Story writing
 - Implement story [NOT NOW]
@@ -9,6 +10,8 @@ FIX:
 - fix krispy tiles
 - check code in dialogue script, make sure it's original
 - FIX JUMPING OH MY GOD
+- Fix audio mixing
+- Fix camera angles
 
 - Make tutorial?
 - Clean up code and make UML diagrams

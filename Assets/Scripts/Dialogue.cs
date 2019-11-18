@@ -153,8 +153,9 @@ public class Dialogue : MonoBehaviour
     //  3. gonzalo must get the keys to ricardo's kitchen
     //G: Right, so Ricardo must be locked up in his kitchen right now...
     //G: That means I should find the keys to his kitchen!
-    //G: But where would Ricardo place his keys?
-    //G: ...Guess I'll look around.
+    //G: Oh! My eagle vision sees the keys!
+    // --camera pans to the end of the level where the keys are--
+    //G: Let's a go!
 
     //  4. gonzalo drops the keys in salsa
     //G: Whoopsie daisy!

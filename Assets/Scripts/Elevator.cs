@@ -5,9 +5,9 @@ using UnityEngine;
 public class Elevator : MonoBehaviour
 {
     private bool goUp = false;
-    private Vector3 startingPosition = new Vector3(-25, -32.5f, 0);
+    public Vector3 startingPosition = new Vector3(-25, -32.5f, 0);
     private Vector3 targetPosition;
-    private float distance = 52f;
+    public float distance = 52f;
     private float timeToReachTarget = 5f;
     private float t = 0;
 
@@ -18,7 +18,6 @@ public class Elevator : MonoBehaviour
             goUp = true;
             t = 0;
 
-            startingPosition = new Vector3(-25, -32.5f, 0);
             targetPosition = startingPosition + Vector3.up * distance;
         }
     }
