@@ -1,9 +1,7 @@
 CURRENTLY:
-- Keep adding collectibles on level 3
-- START ADDING PROPER GRAPHICS YOU BIMBO
 - Finish Story writing
 - Implement story [NOT NOW]
-- Make Levels
+- Make Levels (need 4, 5)
 
 FIX:
 - fix bumpy alfonso movement
@@ -13,6 +11,7 @@ FIX:
 - Fix audio mixing
 - Fix camera angles
 
+- START ADDING PROPER GRAPHICS YOU BIMBO
 - Make tutorial?
 - Clean up code and make UML diagrams
 - Finish sprites
