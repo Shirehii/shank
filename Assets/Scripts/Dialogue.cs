@@ -61,7 +61,10 @@ public class Dialogue : MonoBehaviour
             {
                 player.dead = true;
                 moveSmoothly = false;
-                keys.transform.position = new Vector3(0,-2,0); //LEVEL 4 INTRO CONTINUE HERE
+                keys.transform.position = new Vector3(0,-5,0);
+                //dialogue here
+                keys.transform.position = new Vector3(-1.5f, -188, 0);
+                //LEVEL 4 INTRO CONTINUE HERE (more dialogue)
             }
         }
     }
