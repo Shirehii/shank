@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class Dialogue : MonoBehaviour
     public GameObject dialogueBoxSkip;
     public int watchingIntro = 0; // had to use int instead of bool here :/ 1=true 0=false
     private bool watchedIntro = false;
+
+    //Actual Dialogue
+    private Text dialogueName;
+    private Text dialogueText;
 
     //script haha
     public PlayerController player;
@@ -44,6 +49,9 @@ public class Dialogue : MonoBehaviour
 
         scene = SceneManager.GetActiveScene();
         level = scene.name;
+
+        dialogueName = GameObject.Find("DialogueName").GetComponent<Text>();
+        dialogueText = GameObject.Find("DialogueText").GetComponent<Text>();
     }
 
     private void Update()
@@ -51,6 +59,11 @@ public class Dialogue : MonoBehaviour
         if (watchingIntro == 1 && Input.GetKeyDown(KeyCode.S)) //For skipping the level intro
         {
             ExitIntro();
+        }
+
+        if (watchingIntro == 1 && Input.GetKeyDown(KeyCode.Return))
+        {
+            Debug.Log("aaaa");
         }
 
         if (moveSmoothly)
@@ -82,7 +95,18 @@ public class Dialogue : MonoBehaviour
             switch (level)
             {
                 case "1":
+
                     //gonzalo and ricardo fight as ricardo steals the spatula
+                    //G: Ricardo! What are you doing?!
+                    //G: That Golden Spatula is mine!
+                    //R: Ay dios mio, just get a regular spatula.
+                    //R: You would use this to cook anyway, we both know you'd just frame it on the wall and never use it.
+                    //G: ...that's what trophies are for, Ricardo. To sit on the shelf.
+                    //G: *gasp* Are you saying that you were thinking of using that Spatula to actually cook?!
+                    //R: Uhh...
+                    //R: I guess I should leave now.
+                    //G: No! Ricardo!
+                    //G: I have to get the Golden Spatula back!
                     break;
                 case "2":
                     //gonzalo tells papa alfonso
@@ -123,18 +147,6 @@ public class Dialogue : MonoBehaviour
 
     //  Prologue. -Gonzalo wins golden spatula but ricardo looks upset/jealous
     //
-
-    //  1. gonzalo and ricardo fight as ricardo steals the spatula
-    //G: Ricardo! What are you doing?!
-    //G: That Golden Spatula is mine!
-    //R: Ay dios mio, just get a regular spatula.
-    //R: You would use this to cook anyway, we both know you'd just frame it on the wall and never use it.
-    //G: ...that's what trophies are for, Ricardo. To sit on the shelf.
-    //G: *gasp* Are you saying that you were thinking of using that Spatula to actually cook?!
-    //R: Uhh...
-    //R: I guess I should leave now.
-    //G: No! Ricardo!
-    //G: I have to get the Golden Spatula back!
 
     //  2. gonzalo tells papa alfonso
     //G: ...!

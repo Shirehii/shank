@@ -2,6 +2,8 @@ CURRENTLY:
 - Finish Story writing
 - Implement story
 
+- !!!!!!!!!Points Display + score system
+
 FIX:
 - fix bumpy alfonso movement
 - fix krispy tiles
@@ -16,7 +18,6 @@ FIX:
 - Clean up code and make UML diagrams
 - Finish sprites
 - Extra features?
-- !!!!!!!!!Points Display + score system
 - Credits (i was very hungry when making this game) (https://opengameart.org/ for sprites)
 - Options menu
 - Saving system?
