@@ -45,7 +45,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 472}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -92,10 +92,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 915, y: 422}
-  m_MaxSize: {x: 22010, y: 10022}
+  m_MinSize: {x: 911, y: 422}
+  m_MaxSize: {x: 22006, y: 10022}
   vertical: 0
-  controlID: 146
+  controlID: 79
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -161,8 +161,8 @@ MonoBehaviour:
     y: 0
     width: 459
     height: 947
-  m_MinSize: {x: 204, y: 222}
-  m_MaxSize: {x: 4004, y: 4022}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -499,9 +499,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 44a80100
-      m_LastClickedID: 108612
-      m_ExpandedIDs: b44dffff9c50ffff4c8cffffe08dffff388fffff8cbdffffc2bfffff80c1ffff04c3ffff44c4ffff0cc5ffffe8ebffff72eeffff4efaffff2a420000dc420000cc460000124b0000244c00001a9200000e960000789a000072a100002aa6000080a6000088a600009aa70000d00c0100d60c0100be100100ca1001005c1401003a150100e61501004c1601001ea2010032a2010034a7010040a70100
+      m_SelectedIDs: 88c30000
+      m_LastClickedID: 50056
+      m_ExpandedIDs: 22c7ffff08c9ffff52caffff9acbffff7cccffff26ceffffc0cfffffb2d1ffffe6d3ffff82d5ffffc6d6ffff66d7ffffced9ffff6cdbffff32ddffff86deffff06e0ffff9ae1ffff1ce2ffff36e3ffff12e6ffff6ae8ffff36eaffffccebffff0aedffff2ceeffff60efffffa6f1ffff28f3fffff0f6ffff3cf8ffffd2f8ffffa2f9ffff6afbffffc847000078480000a04b0000744c0000785400004c550000e8580000025a000032650000266900005c6b0000d26f0000487200005a7e0000867e00002e7f00004a830000c08b0000948c0000988d0000cc8e0000b69500004a9a0000729e0000eca80000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -602,20 +602,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Materials
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Materials
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\yeet\shank
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 40410000
-    m_LastClickedID: 16704
-    m_ExpandedIDs: 00000000ec2d0000522f000024340000363f000000ca9a3b
+    m_SelectedIDs: fc300000
+    m_LastClickedID: 12540
+    m_ExpandedIDs: 00000000502d0000b62e000096330000b43e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -643,7 +643,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ec2d0000522f000024340000363f0000
+    m_ExpandedIDs: 00000000502d0000b62e000096330000b43e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

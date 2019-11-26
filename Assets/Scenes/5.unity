@@ -218,7 +218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &39833306
 RectTransform:
   m_ObjectHideFlags: 0
@@ -85619,7 +85619,7 @@ GameObject:
   - component: {fileID: 411800262}
   m_Layer: 5
   m_Name: Press P to Pause
-  m_TagString: DialogueBox
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85936,6 +85936,7 @@ MonoBehaviour:
   paused: 0
   won: 0
   dialogue: {fileID: 455208127}
+  points: 0
   pausePanel: {fileID: 1490806347}
   pauseText: {fileID: 436645897}
   winPanel: {fileID: 2092426713}
@@ -85949,7 +85950,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 455208123}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: cb7c0fdf6323608408af755d75a309d2, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -88380,7 +88381,7 @@ GameObject:
   - component: {fileID: 1007767817}
   m_Layer: 5
   m_Name: DialogueText
-  m_TagString: Untagged
+  m_TagString: DialogueText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92560,7 +92561,7 @@ GameObject:
   - component: {fileID: 1756883449}
   m_Layer: 5
   m_Name: DialogueName
-  m_TagString: Untagged
+  m_TagString: DialogueName
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92946,7 +92947,7 @@ GameObject:
   - component: {fileID: 1851741850}
   m_Layer: 0
   m_Name: Collectibles
-  m_TagString: Untagged
+  m_TagString: Collectibles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

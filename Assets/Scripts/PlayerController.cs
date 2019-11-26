@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     //Mechanics variables
     private float lastDirectionPressed = 1;
+    public int points = 0;
 
     //UI variables
     public GameObject pausePanel;

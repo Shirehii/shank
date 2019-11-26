@@ -12,9 +12,6 @@ public class Collectibles : MonoBehaviour
     private float t = 0;
     private int direction = 1; //1 is up, -1 is down
 
-    //Points
-    public int points = 0;
-
     //Healing & Damage
     public Lives lives;
 
@@ -63,9 +60,10 @@ public class Collectibles : MonoBehaviour
             //Points
             if (gameObject.tag == "Point")
             {
-                points += 1;
-                Debug.Log(points);
+                player.points += 1;
+                Debug.Log(player.points);
                 gameObject.SetActive(false);
+                source.PlayOneShot(player.point);
             }
 
             //Adding HP
