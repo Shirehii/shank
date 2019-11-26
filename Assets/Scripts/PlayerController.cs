@@ -114,6 +114,13 @@ public class PlayerController : MonoBehaviour
     //Trigger stuff
     void OnTriggerEnter2D(Collider2D trigger)
     {
+        //Destroy secret wall
+        if (trigger.gameObject.tag == "DestroyWall")
+        {
+            Destroy(trigger.gameObject);
+            Destroy(GameObject.FindGameObjectWithTag("DestroyWall"));
+        }
+
         //Point collecting
         if (trigger.gameObject.tag == "Point")
         {
@@ -152,6 +159,7 @@ public class PlayerController : MonoBehaviour
             winPanel.gameObject.SetActive(true);
             rig.bodyType = RigidbodyType2D.Static;
             won = true;
+            Destroy(trigger.gameObject);
         }
     }
 

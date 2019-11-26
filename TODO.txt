@@ -1,24 +1,28 @@
 CURRENTLY:
-- START ADDING PROPER GRAPHICS YOU BIMBO
 - Finish Story writing
-- Implement story [NOT NOW]
-- Make Levels
+- Implement story
+
+- !!!!!!!!!Points Display + score system
 
 FIX:
 - fix bumpy alfonso movement
 - fix krispy tiles
 - check code in dialogue script, make sure it's original
 - FIX JUMPING OH MY GOD
+- Fix audio mixing
+- Fix camera angles
+- make jumping animations be triggered by not touching ground, instead of by jumping
 
+- START ADDING PROPER GRAPHICS YOU BIMBO
 - Make tutorial?
 - Clean up code and make UML diagrams
 - Finish sprites
 - Extra features?
-- Points Display + score system
 - Credits (i was very hungry when making this game) (https://opengameart.org/ for sprites)
 - Options menu
 - Saving system?
 - Fix player sprite?
+- Make alfonso salsa-covered sprite
 
 - Comment on code
 - List sources (lives video, troubleshooting threads on stackoverflow & unity forums, https://answers.unity.com/questions/296347/move-transform-to-target-in-x-seconds.html?_ga=2.74799378.1458521887.1572861537-1545593887.1572861537)

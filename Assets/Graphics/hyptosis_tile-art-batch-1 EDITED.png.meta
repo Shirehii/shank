@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: 2376605965199337046
     second: hyptosis_tile-art-batch-1 EDITED_1
+  - first:
+      213: -8032734875603300636
+    second: hyptosis_tile-art-batch-1 EDITED_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -148,7 +151,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -169,7 +172,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -177,6 +180,27 @@ TextureImporter:
       bones: []
       spriteID: b6d4f0bc59a07b2458a191eceadfd8b7
       internalID: 2376605965199337046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hyptosis_tile-art-batch-1 EDITED_2
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 512
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c79198825317d14468a8608514a92be7
+      internalID: -8032734875603300636
       vertices: []
       indices: 
       edges: []
