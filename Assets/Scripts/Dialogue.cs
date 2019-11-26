@@ -125,7 +125,7 @@ public class Dialogue : MonoBehaviour
     //G: Ricardo! What are you doing?!
     //G: That Golden Spatula is mine!
     //R: Ay dios mio, just get a regular spatula.
-    //R: You would use this to cook anyway, we both know you'd just frame it on the wall and never use it.
+    //R: You wouldn't use this to cook anyway, we both know you'd just frame it on the wall and never use it.
     //G: ...that's what trophies are for, Ricardo. To sit on the shelf.
     //G: *gasp* Are you saying that you were thinking of using that Spatula to actually cook?!
     //R: Uhh...
