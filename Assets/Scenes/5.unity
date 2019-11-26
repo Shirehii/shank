@@ -85936,11 +85936,10 @@ MonoBehaviour:
   paused: 0
   won: 0
   dialogue: {fileID: 455208127}
-  lives: 3
   pausePanel: {fileID: 1490806347}
   pauseText: {fileID: 436645897}
-  gameOverPanel: {fileID: 1052667573}
   winPanel: {fileID: 2092426713}
+  gameOverPanel: {fileID: 1052667573}
 --- !u!70 &455208125
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -86424,7 +86423,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420030}
-  - component: {fileID: 519420033}
   - component: {fileID: 519420029}
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
@@ -86513,22 +86511,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af6d73a1a959aae47835dccfe63051c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Heart1: {fileID: 204052674}
-  Heart2: {fileID: 1760838794}
-  Heart3: {fileID: 274909471}
-  player: {fileID: 455208124}
 --- !u!82 &519420034
 AudioSource:
   m_ObjectHideFlags: 0
@@ -88781,7 +88763,7 @@ GameObject:
   - component: {fileID: 1052667574}
   m_Layer: 5
   m_Name: GameOverPanel
-  m_TagString: Untagged
+  m_TagString: GameOverPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92961,6 +92943,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1851741849}
+  - component: {fileID: 1851741850}
   m_Layer: 0
   m_Name: Collectibles
   m_TagString: Untagged
@@ -93027,6 +93010,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1851741850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851741848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6d73a1a959aae47835dccfe63051c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Heart1: {fileID: 204052674}
+  Heart2: {fileID: 1760838794}
+  Heart3: {fileID: 274909471}
+  hearts: 3
 --- !u!4 &1856329206 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7906722367502349518, guid: a3d78b4d1b6afb440b4f5738ef5e31ce,

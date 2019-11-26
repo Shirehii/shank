@@ -13,6 +13,10 @@ TagManager:
   - Pause
   - Win
   - DestroyWall
+  - GameOverPanel
+  - Collectibles
+  - DialogueName
+  - DialogueText
   layers:
   - Default
   - TransparentFX

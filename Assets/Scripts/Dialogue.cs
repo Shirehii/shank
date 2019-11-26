@@ -50,8 +50,12 @@ public class Dialogue : MonoBehaviour
         scene = SceneManager.GetActiveScene();
         level = scene.name;
 
-        dialogueName = GameObject.Find("DialogueName").GetComponent<Text>();
-        dialogueText = GameObject.Find("DialogueText").GetComponent<Text>();
+        dialogueBox = GameObject.FindGameObjectWithTag("DialogueBox");
+        dialogueName = GameObject.FindGameObjectWithTag("DialogueName").GetComponent<Text>();
+        dialogueText = GameObject.FindGameObjectWithTag("DialogueText").GetComponent<Text>();
+        dialogueBox.SetActive(false);
+        dialogueName.gameObject.SetActive(false);
+        dialogueText.gameObject.SetActive(false);
     }
 
     private void Update()

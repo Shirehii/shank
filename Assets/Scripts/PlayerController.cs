@@ -30,15 +30,13 @@ public class PlayerController : MonoBehaviour
     public Dialogue dialogue;
 
     //Mechanics variables
-    private int points = 0;
-    public int lives = 3;
     private float lastDirectionPressed = 1;
 
     //UI variables
     public GameObject pausePanel;
     public Text pauseText;
-    public GameObject gameOverPanel;
     public GameObject winPanel;
+    public GameObject gameOverPanel;
 
 
     //Initializes when the script starts
@@ -98,6 +96,13 @@ public class PlayerController : MonoBehaviour
             pauseText.text = "Press P to Pause";
             rig.bodyType = RigidbodyType2D.Dynamic;
         }
+
+        //Death
+        if (dead == true)
+        {
+            gameOverPanel.gameObject.SetActive(true);
+            rig.bodyType = RigidbodyType2D.Static;
+        }
     }
 
     //Collision stuff
@@ -121,37 +126,6 @@ public class PlayerController : MonoBehaviour
             Destroy(GameObject.FindGameObjectWithTag("DestroyWall"));
         }
 
-        //Point collecting
-        if (trigger.gameObject.tag == "Point")
-        {
-            points += 1;
-            Debug.Log(points);
-            Destroy(trigger.gameObject);
-            source.PlayOneShot(point);
-        }
-
-        //Adding HP
-        if (trigger.gameObject.tag == "Heal")
-        {
-            Destroy(trigger.gameObject);
-            lives += 1;
-            source.PlayOneShot(heal);
-        }
-
-        //Death
-        if (trigger.gameObject.tag == "Enemy" && lives > 0)
-        {
-            Destroy(trigger.gameObject);
-            lives -= 1;
-            source.PlayOneShot(damage);
-        }
-        else if (trigger.gameObject.tag == "Enemy" && lives == 0)
-        {
-            dead = true;
-            gameOverPanel.gameObject.SetActive(true);
-            source.PlayOneShot(death);
-        }
-
         //Winning
         if (trigger.gameObject.tag == "Win" && !dead)
         {
@@ -160,6 +134,11 @@ public class PlayerController : MonoBehaviour
             rig.bodyType = RigidbodyType2D.Static;
             won = true;
             Destroy(trigger.gameObject);
+        }
+
+        if (trigger.gameObject.tag == "Enemy" && dead == true)
+        {
+            source.PlayOneShot(death);
         }
     }
 

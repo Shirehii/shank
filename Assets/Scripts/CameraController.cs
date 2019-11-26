@@ -5,14 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public GameObject player;
-    private Vector3 offset;
-
-    //Initializes when the script starts
-    void Start()
-    {
-        //Get Components
-        offset = new Vector3(0,0,-5);
-    }
+    private Vector3 offset = new Vector3(0, 0, -5);
 
     void LateUpdate()
     {

@@ -271,3 +271,7 @@ C:\Users\AMARGA200\Documents\GitHub\shank\obj\Debug\Assembly-CSharp.csproj.CoreC
 C:\Users\AMARGA200\Documents\GitHub\shank\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\AMARGA200\Documents\GitHub\shank\obj\Debug\Assembly-CSharp.dll
 C:\Users\AMARGA200\Documents\GitHub\shank\obj\Debug\Assembly-CSharp.pdb
+D:\yeet\shank\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+D:\yeet\shank\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+D:\yeet\shank\obj\Debug\Assembly-CSharp.dll
+D:\yeet\shank\obj\Debug\Assembly-CSharp.pdb

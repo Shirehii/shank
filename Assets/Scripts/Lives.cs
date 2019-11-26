@@ -5,7 +5,7 @@ using UnityEngine;
 public class Lives : MonoBehaviour
 {
     public GameObject Heart1, Heart2, Heart3;
-    public PlayerController player;
+    public int hearts = 3;
 
     void Start()
     {
@@ -16,12 +16,12 @@ public class Lives : MonoBehaviour
 
     void Update()
     {
-        if (player.lives > 3)
+        if (hearts > 3)
         {
-            player.lives = 3;
+            hearts = 3;
         }
 
-        switch (player.lives)
+        switch (hearts)
         {
             case 0:
                 Heart1.gameObject.SetActive(false);
