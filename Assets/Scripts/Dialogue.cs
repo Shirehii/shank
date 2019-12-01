@@ -65,9 +65,9 @@ public class Dialogue : MonoBehaviour
             ExitIntro();
         }
 
-        if (watchingIntro == 1 && Input.GetKeyDown(KeyCode.Return))
+        if (watchingIntro == 1 && Input.GetKeyDown(KeyCode.Return)) //Next sentence
         {
-            Debug.Log("aaaa");
+            NextSentence();
         }
 
         if (moveSmoothly)
@@ -94,12 +94,11 @@ public class Dialogue : MonoBehaviour
         {
             IntroTriggered();
             Destroy(trigger.gameObject);
-
-            startingPosition = transform.position;
             switch (level)
             {
                 case "1":
-
+                    dialogueName.text = "Gonzalo";
+                    dialogueText.text = "Ricardo! What are you doing?!";
                     //gonzalo and ricardo fight as ricardo steals the spatula
                     //G: Ricardo! What are you doing?!
                     //G: That Golden Spatula is mine!
@@ -114,19 +113,65 @@ public class Dialogue : MonoBehaviour
                     break;
                 case "2":
                     //gonzalo tells papa alfonso
+                    //  2. gonzalo tells papa alfonso
+                    //G: ...!
+                    //G: Papa Alfonso! Mamma mia, it really is you!
+                    //A: ...Huh?? Who's there?
+                    //G: Papa, it's me! Your son Gonzalo! You showed up at the right time, I really need your advice!
+                    //A: Whatsa say sonnie??
+                    //G: Do you remember papa? When I was younger and you'd teach me all kinds of tricks in the kitchen? I wanted to make you feel proud of me papa...
+                    //G: I won the Golden Spatula papa, but that wicked Ricardo stole it away from me!
+                    //G: He's probably using it to cook right now! He's going to get it dirty!
+                    //A: A little bit louder sonnie!
+                    //G: ...You're right.
+                    //G: I shouldn't just sit here, I should go take it back from him! At all costs!
+                    //G: Thank you, papa Alfonso. You're my hero.
+                    //G: I'm going to take the Golden Spatula back and make you proud!
+                    //A: ...
+                    //A: ...What a weird kiddo.
                     break;
                 case "3":
                     //gonzalo must get the keys to ricardo's kitchen
+                    //G: Right, so Ricardo must be locked up in his kitchen right now...
+                    //G: That means I should find the keys to his kitchen!
+                    //G: Oh! My eagle vision sees the keys!
+                    // --camera pans to the end of the level where the keys are--
+                    //G: Let's a go!
                     break;
                 case "4": //gonzalo drops the keys in salsa
+                    startingPosition = transform.position;
+
                     player.moving = true;
                     targetPosition = startingPosition + new Vector3(5, 0, 0);
                     timeToReachTarget = 2f;
                     moveSmoothly = true;
+
+                    //G: Whoopsie daisy!
+                    //G: !
+                    //G: Mamma mia! The keys!
+                    //G: I have to get them back!
                     break;
                 case "5":
                     //boss fight vs ricardo
+                    //G: This is it, Ricardo.
+                    //G: You shall get away with this no more!
+                    //R: Oh, it's you, my dear friend Gonzalo...
+                    //R: It took you quite a while to find me, I was starting to lose hope.
+                    //G: Mamma mia, can you believe it? On my way here, I found a giant pot filled with tomato salsa, and I accidentally dropped your kitchen's keys in it, and had to dive in there to get them back--
+                    //R: You
+                    //R: You did what
+                    //G: Huh?
+                    //R: Huh?
+                    //G: Well, whatever. That Spatula is mine and you know it, Ricardo!
+                    //G: I shall take it back!
+                    //R: Then perish.
                     break;
+
+                    //  Prologue. -Gonzalo wins golden spatula but ricardo looks upset/jealous
+                    //
+
+                    //  Epilogue. -Gonzalo gets back spatula, ricardo goes on a long talk about friendship and they ??? become friends i guess
+                    //
             }
         }
     }
@@ -135,6 +180,8 @@ public class Dialogue : MonoBehaviour
     {
         dialogueBox.SetActive(true);
         dialogueBoxSkip.SetActive(true);
+        dialogueName.gameObject.SetActive(true);
+        dialogueText.gameObject.SetActive(true);
         watchingIntro = 1;
         rig.bodyType = RigidbodyType2D.Static;
     }
@@ -145,57 +192,9 @@ public class Dialogue : MonoBehaviour
         rig.bodyType = RigidbodyType2D.Dynamic;
         dialogueBox.SetActive(false);
         dialogueBoxSkip.SetActive(false);
+        dialogueName.gameObject.SetActive(false);
+        dialogueText.gameObject.SetActive(false);
         watchedIntro = true;
         moveSmoothly = false;
     }
-
-    //  Prologue. -Gonzalo wins golden spatula but ricardo looks upset/jealous
-    //
-    
-    //  2. gonzalo tells papa alfonso
-    //G: ...!
-    //G: Papa Alfonso! Mamma mia, it really is you!
-    //A: ...Huh?? Who's there?
-    //G: Papa, it's me! Your son Gonzalo! You showed up at the right time, I really need your advice!
-    //A: Whatsa say sonnie??
-    //G: Do you remember papa? When I was younger and you'd teach me all kinds of tricks in the kitchen? I wanted to make you feel proud of me papa...
-    //G: I won the Golden Spatula papa, but that wicked Ricardo stole it away from me!
-    //G: He's probably using it to cook right now! He's going to get it dirty!
-    //A: A little bit louder sonnie!
-    //G: ...You're right.
-    //G: I shouldn't just sit here, I should go take it back from him! At all costs!
-    //G: Thank you, papa Alfonso. You're my hero.
-    //G: I'm going to take the Golden Spatula back and make you proud!
-    //A: ...
-    //A: ...What a weird kiddo.
-
-    //  3. gonzalo must get the keys to ricardo's kitchen
-    //G: Right, so Ricardo must be locked up in his kitchen right now...
-    //G: That means I should find the keys to his kitchen!
-    //G: Oh! My eagle vision sees the keys!
-    // --camera pans to the end of the level where the keys are--
-    //G: Let's a go!
-
-    //  4. gonzalo drops the keys in salsa
-    //G: Whoopsie daisy!
-    //G: !
-    //G: Mamma mia! The keys!
-    //G: I have to get them back!
-
-    //  5. boss fight vs ricardo
-    //G: This is it, Ricardo.
-    //G: You shall get away with this no more!
-    //R: Oh, it's you, my dear friend Gonzalo...
-    //R: It took you quite a while to find me, I was starting to lose hope.
-    //G: Mamma mia, can you believe it? On my way here, I found a giant pot filled with tomato salsa, and I accidentally dropped your kitchen's keys in it, and had to dive in there to get them back--
-    //R: You
-    //R: You did what
-    //G: Huh?
-    //R: Huh?
-    //G: Well, whatever. That Spatula is mine and you know it, Ricardo!
-    //G: I shall take it back!
-    //R: Then perish.
-
-    //  Epilogue. -Gonzalo gets back spatula, ricardo goes on a long talk about friendship and they ??? become friends i guess
-    //
 }
