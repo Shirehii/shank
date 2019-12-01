@@ -1,4 +1,5 @@
 CURRENTLY:
+- Fix jumping bug - make new tilemap for walls
 - Finish Story writing
 - Implement story
 
