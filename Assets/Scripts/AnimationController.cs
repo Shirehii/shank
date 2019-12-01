@@ -21,7 +21,7 @@ public class AnimationController : MonoBehaviour
             {
                 animator.Play("Dead");
             }
-            else if (player.jumping)
+            else if (!player.isGrounded)
             {
                 animator.Play("Jumping");
             }

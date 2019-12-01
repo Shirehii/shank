@@ -1,18 +1,12 @@
 CURRENTLY:
 - Fix jumping bug - make new tilemap for walls
-- Finish Story writing
-- Implement story
-
-- !!!!!!!!!Points Display + score system
 
 FIX:
 - fix bumpy alfonso movement
 - fix krispy tiles
-- check code in dialogue script, make sure it's original
 - FIX JUMPING OH MY GOD
 - Fix audio mixing
 - Fix camera angles
-- make jumping animations be triggered by not touching ground, instead of by jumping
 
 - START ADDING PROPER GRAPHICS YOU BIMBO
 - Make tutorial?

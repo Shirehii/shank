@@ -61,7 +61,6 @@ public class Collectibles : MonoBehaviour
             if (gameObject.tag == "Point")
             {
                 player.points += 1;
-                Debug.Log(player.points);
                 gameObject.SetActive(false);
                 source.PlayOneShot(player.point);
             }

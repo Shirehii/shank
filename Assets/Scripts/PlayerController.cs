@@ -21,13 +21,10 @@ public class PlayerController : MonoBehaviour
     //Variables for player states, mostly used in animation controller
     public bool idle;
     public bool moving;
-    public bool jumping;
     public bool dead = false;
     public bool paused = false;
     public bool won = false;
-    private bool isGrounded; //to check if the player is touching the ground
-    
-    public Dialogue dialogue;
+    public bool isGrounded; //to check if the player is touching the ground
 
     //Mechanics variables
     private float lastDirectionPressed = 1;
@@ -51,13 +48,12 @@ public class PlayerController : MonoBehaviour
     //Player Input
     void Update()
     {
-        if (dialogue.watchingIntro == 0 && !dead && !paused && !won) //If player isn't currently watching the level intro, isn't dead and isn't paused, then check for movement input
+        if (!dead && !paused && !won) //If player isn't dead and game isn't paused, then check for movement input
         {
             if (Input.GetAxis("Vertical") > 0 && isGrounded) //If the model is touching the ground and the player pressed the up button...
             {
                 rig.AddForce(new Vector2(0, jumpSpeed)); //...Add a vertical force to the model
                 isGrounded = false;
-                jumping = true;
                 source.PlayOneShot(jump);
             }
 
@@ -113,7 +109,6 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "Ground")
         {
             isGrounded = true;
-            jumping = false;
         }
     }
 
