@@ -37,7 +37,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
-    - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/Scenes/1.unity:
     - Class: 1
@@ -531,8 +530,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11124}
     - Class: 114
       Script: {instanceID: 11496}
-    - Class: 114
-      Script: {instanceID: 11512}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1024,4 +1021,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/3.unity
   - Assets/Scenes/4.unity
   - Assets/Scenes/5.unity
-  playerPath: D:/yeet/shank/Builds/shank.exe
+  playerPath: D:/yeet/shank/Build/shank.exe
