@@ -26,7 +26,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Background
   - 
   - 
   - 
@@ -59,4 +59,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 2872736509
+    locked: 0
+  - name: Background
+    uniqueID: 2330221559
     locked: 0

@@ -12,9 +12,6 @@ public class Collectibles : MonoBehaviour
     private float t = 0;
     private int direction = 1; //1 is up, -1 is down
 
-    //Healing & Damage
-    public Lives lives;
-
     private AudioSource source;
     public PlayerController player;
 
@@ -24,7 +21,6 @@ public class Collectibles : MonoBehaviour
         targetPosition = startingPosition + Vector3.up * distance;
         
         source = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
-        lives = GameObject.FindGameObjectWithTag("Collectibles").GetComponent<Lives>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
@@ -57,34 +53,7 @@ public class Collectibles : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            //Points
-            if (gameObject.tag == "Point")
-            {
-                player.points += 1;
-                gameObject.SetActive(false);
-                source.PlayOneShot(player.point);
-            }
-
-            //Adding HP
-            if (gameObject.tag == "Heal")
-            {
-                gameObject.SetActive(false);
-                lives.hearts += 1;
-                source.PlayOneShot(player.heal);
-            }
-
-            //Death
-            if (gameObject.tag == "Enemy" && lives.hearts > 0)
-            {
-                gameObject.SetActive(false);
-                lives.hearts -= 1;
-                source.PlayOneShot(player.damage);
-            }
-            else if (gameObject.tag == "Enemy" && lives.hearts == 0)
-            {
-                player.dead = true;
-                gameObject.SetActive(false);
-            }
+            gameObject.SetActive(false);
         }
     }
 }

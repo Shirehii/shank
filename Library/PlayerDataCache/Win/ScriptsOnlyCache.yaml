@@ -28,7 +28,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -631,7 +630,7 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: acbf53e2dfbed60791f95878400be7ac
+      Hash: c7567268be9a7a259f85f9c8b934fa5c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -805,7 +804,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 13ae5100b047bad83aa84563b3101f1c
+      Hash: 27ebaa633e4f4014a4763e0bff2ae3e8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Collectibles

@@ -9,14 +9,12 @@ public class Points : MonoBehaviour
     private string totalPoints;
     private Text results;
 
-    // Start is called before the first frame update
     void Start()
     {
         results = GetComponent<Text>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         totalPoints = player.points.ToString();

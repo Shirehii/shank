@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     //Mechanics variables
     private float lastDirectionPressed = 1;
     public int points = 0;
+    public Lives lives;
 
     //UI variables
     public GameObject pausePanel;
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
         //Get Components
         rig = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
+        lives = GameObject.FindGameObjectWithTag("Collectibles").GetComponent<Lives>();
     }
 
     //Player Input
@@ -132,8 +134,30 @@ public class PlayerController : MonoBehaviour
             Destroy(trigger.gameObject);
         }
 
-        if (trigger.gameObject.tag == "Enemy" && dead == true)
+        //Points
+        if (trigger.gameObject.tag == "Point")
         {
+            source.PlayOneShot(point);
+            points += 1;
+            Debug.Log(points);
+        }
+
+        //Adding HP
+        if (trigger.gameObject.tag == "Heal")
+        {
+            lives.hearts += 1;
+            source.PlayOneShot(heal);
+        }
+
+        //Death
+        if (trigger.gameObject.tag == "Enemy" && lives.hearts > 0)
+        {
+            lives.hearts -= 1;
+            source.PlayOneShot(damage);
+        }
+        else if (trigger.gameObject.tag == "Enemy" && lives.hearts == 0)
+        {
+            dead = true;
             source.PlayOneShot(death);
         }
     }

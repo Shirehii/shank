@@ -1,5 +1,7 @@
 CURRENTLY:
 - Fix jumping bug - make new tilemap for walls
+- Secret wall not destroyed in build
+- jumping too high on level 3 doesnt let you see where you need to land
 
 FIX:
 - fix bumpy alfonso movement
