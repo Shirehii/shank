@@ -1021,4 +1021,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/3.unity
   - Assets/Scenes/4.unity
   - Assets/Scenes/5.unity
-  playerPath: D:/yeet/shank/Build/shank.exe
+  playerPath: D:/yeet/shank/Builds/shank.exe

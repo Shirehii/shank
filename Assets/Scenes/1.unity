@@ -1519,7 +1519,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1656,7 +1656,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8816be27c48df7246a84e087cbac11b4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ef5e835386e651d43b429e12d3da6a0c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -104433,6 +104433,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 807160182}
     m_Modifications:
+    - target: {fileID: 1805231419830082131, guid: f2487d2eed1b91046ae4073cd36355d1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3783702963044944651, guid: f2487d2eed1b91046ae4073cd36355d1,
         type: 3}
       propertyPath: m_Name
@@ -104548,11 +104553,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 519420034}
-    - target: {fileID: 1805231419830082131, guid: f2487d2eed1b91046ae4073cd36355d1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2487d2eed1b91046ae4073cd36355d1, type: 3}
 --- !u!224 &3783702963663203116 stripped
