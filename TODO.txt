@@ -1,5 +1,4 @@
 FIX:
-- jumping too high on level 3 doesnt let you see where you need to land
 - fix krispy tiles
 - Clean up code and make UML diagrams
 - Comment on code
