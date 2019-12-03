@@ -104491,6 +104491,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4684722794612281845, guid: e78beb1f61623534aa58a9aa283ae192,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4684722794423695344, guid: e78beb1f61623534aa58a9aa283ae192,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -104566,11 +104571,6 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 1052667573}
-    - target: {fileID: 4684722794612281845, guid: e78beb1f61623534aa58a9aa283ae192,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 4684722794336242087, guid: e78beb1f61623534aa58a9aa283ae192,
         type: 3}
       propertyPath: m_SortingLayerID

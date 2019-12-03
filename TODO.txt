@@ -1,12 +1,6 @@
-CURRENTLY:
-- Fix jumping bug - make new tilemap for walls
-- Secret wall not destroyed in build
-- jumping too high on level 3 doesnt let you see where you need to land
-
 FIX:
-- fix bumpy alfonso movement
+- jumping too high on level 3 doesnt let you see where you need to land
 - fix krispy tiles
-- FIX JUMPING OH MY GOD
 - Clean up code and make UML diagrams
 - Comment on code
 - List sources (lives video, troubleshooting threads on stackoverflow & unity forums, https://answers.unity.com/questions/296347/move-transform-to-target-in-x-seconds.html?_ga=2.74799378.1458521887.1572861537-1545593887.1572861537)

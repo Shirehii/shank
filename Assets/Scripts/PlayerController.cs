@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     //Component Variables
     private Rigidbody2D rig;
+    public GameObject leg;
     private AudioSource source;
 
     public AudioClip heal;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded; //to check if the player is touching the ground
 
     //Mechanics variables
+    private bool jumpNow = false;
     private float lastDirectionPressed = 1;
     public int points = 0;
     public Lives lives;
@@ -54,14 +56,11 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetAxis("Vertical") > 0 && isGrounded) //If the model is touching the ground and the player pressed the up button...
             {
-                rig.AddForce(new Vector2(0, jumpSpeed)); //...Add a vertical force to the model
-                isGrounded = false;
-                source.PlayOneShot(jump);
+                jumpNow = true;
             }
 
             if (Input.GetAxis("Horizontal") != 0) //If the player presses any of the horizontal axis buttons...
-            {
-                rig.velocity = (new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rig.velocity.y)); //...move the model to the direction the player presses, while retaining the vertical velocity of the rigidbody
+            { 
                 moving = true;
                 if (isGrounded && !source.isPlaying)
                 {
@@ -104,13 +103,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //Collision stuff
-    void OnCollisionEnter2D(Collision2D col)
+    private void FixedUpdate() //Physics stuff goes here
     {
-        //Checking for ground
-        if (col.gameObject.tag == "Ground")
+        if (moving)
         {
-            isGrounded = true;
+            rig.velocity = (new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rig.velocity.y)); //...move the model to the direction the player presses, while retaining the vertical velocity of the rigidbody
+        }
+
+        if (jumpNow)
+        {
+            rig.AddForce(new Vector2(0, jumpSpeed)); //...Add a vertical force to the model
+            isGrounded = false;
+            source.PlayOneShot(jump);
+            jumpNow = false;
         }
     }
 
@@ -120,8 +125,8 @@ public class PlayerController : MonoBehaviour
         //Destroy secret wall
         if (trigger.gameObject.tag == "DestroyWall")
         {
-            Destroy(trigger.gameObject);
             Destroy(GameObject.FindGameObjectWithTag("DestroyWall"));
+            Destroy(trigger.gameObject);
         }
 
         //Winning

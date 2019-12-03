@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AnimationController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\CheckForGround.cs" />
     <Compile Include="Assets\Scripts\ClickToLoadScene.cs" />
     <Compile Include="Assets\Scripts\ClickToQuit.cs" />
     <Compile Include="Assets\Scripts\Collectibles.cs" />
