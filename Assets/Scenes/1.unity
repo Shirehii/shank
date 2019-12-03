@@ -1138,7 +1138,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -104351,6 +104351,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1004591426637870840, guid: f2487d2eed1b91046ae4073cd36355d1,
+        type: 3}
+      propertyPath: playerModel
+      value: 
+      objectReference: {fileID: 804067418}
     - target: {fileID: 3783702963044944651, guid: f2487d2eed1b91046ae4073cd36355d1,
         type: 3}
       propertyPath: m_Name
@@ -104466,11 +104471,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 519420034}
-    - target: {fileID: 1004591426637870840, guid: f2487d2eed1b91046ae4073cd36355d1,
-        type: 3}
-      propertyPath: playerModel
-      value: 
-      objectReference: {fileID: 804067418}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2487d2eed1b91046ae4073cd36355d1, type: 3}
 --- !u!224 &3783702963663203116 stripped
@@ -104490,11 +104490,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4684722794612281845, guid: e78beb1f61623534aa58a9aa283ae192,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4684722794423695344, guid: e78beb1f61623534aa58a9aa283ae192,
         type: 3}
@@ -104571,6 +104566,11 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 1052667573}
+    - target: {fileID: 4684722794612281845, guid: e78beb1f61623534aa58a9aa283ae192,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4684722794336242087, guid: e78beb1f61623534aa58a9aa283ae192,
         type: 3}
       propertyPath: m_SortingLayerID

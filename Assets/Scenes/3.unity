@@ -290,7 +290,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c102cdc8b82cdb24798c182ad4dd3eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: {fileID: 0}
   player: {fileID: 0}
 --- !u!61 &57581110
 BoxCollider2D:
@@ -1278,7 +1277,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
