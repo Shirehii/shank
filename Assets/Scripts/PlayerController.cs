@@ -145,6 +145,7 @@ public class PlayerController : MonoBehaviour
             source.PlayOneShot(point);
             points += 1;
             Debug.Log(points);
+            trigger.gameObject.SetActive(false);
         }
 
         //Adding HP
@@ -152,6 +153,7 @@ public class PlayerController : MonoBehaviour
         {
             lives.hearts += 1;
             source.PlayOneShot(heal);
+            trigger.gameObject.SetActive(false);
         }
 
         //Death
@@ -159,6 +161,7 @@ public class PlayerController : MonoBehaviour
         {
             lives.hearts -= 1;
             source.PlayOneShot(damage);
+            trigger.gameObject.SetActive(false);
         }
         else if (trigger.gameObject.tag == "Enemy" && lives.hearts == 0)
         {

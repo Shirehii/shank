@@ -12,16 +12,10 @@ public class Collectibles : MonoBehaviour
     private float t = 0;
     private int direction = 1; //1 is up, -1 is down
 
-    private AudioSource source;
-    public PlayerController player;
-
     void Start()
     {
         startingPosition = transform.position;
         targetPosition = startingPosition + Vector3.up * distance;
-        
-        source = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
 
@@ -46,14 +40,6 @@ public class Collectibles : MonoBehaviour
                 direction *= -1;
                 t = 0;
             }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.tag == "Player")
-        {
-            gameObject.SetActive(false);
         }
     }
 }
