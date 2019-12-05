@@ -1818,13 +1818,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Graphics:\r\nChef sprite by me, inspired by Quentin Nicolson's chef sprite\r\nTilemap
-    by Hyptosis\nPizza image by PancInteractive\nCheese images by bluecarrot16, Daniel
-    Eddeland (daneeklu), Joshua Taylor, Richard Kettering (Jetrel), thekingphoenix,
-    RedVoxel, and Molly \"Cougarmint\" Willits\r\nKeys by Programmer16\r\nCity background
-    image by Gariot\r\nButton image by Buch\nHeart image by Matt Hackett of Lost Decade
-    Games\n\r\nAudio:\r\nMusic by Alex McCulloch\r\nPoint sounds by Luke.RUSTLTD\nWalking
-    sound by Jute\r\nPlayer sounds by Jack Menhorn\nUI sounds by p0ss"
+  m_Text: "Chef sprite by me, inspired by Quentin Nicolson's chef sprite\nTilemap
+    by Hyptosis\r\nPizza image by PancInteractive\nCheese images by bluecarrot16,
+    Daniel Eddeland (daneeklu), Joshua Taylor, Richard Kettering (Jetrel), thekingphoenix,
+    RedVoxel, and Molly \"Cougarmint\" Willits\nKeys by Programmer16\nCity background
+    image by Gariot\nWall background image by Eris\nButton image by Buch\nHeart image
+    by Matt Hackett of Lost Decade Games\n\r\nAudio:\r\nMusic by Alex McCulloch\nPoint
+    sounds by Luke.RUSTLTD\nPlayer sounds by Jack Menhorn\nUI sounds by p0ss"
 --- !u!222 &1232110747
 CanvasRenderer:
   m_ObjectHideFlags: 0
