@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ClickToLoadScene : MonoBehaviour
 {
-    public void LoadScene(string sceneName)
+    public void LoadScene(string sceneName) //Method for loading a scene. The scene name is given in the unity inspector
     {
         SceneManager.LoadScene(sceneName);
     }
