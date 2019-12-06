@@ -4,24 +4,23 @@ using UnityEngine;
 
 public class Lives : MonoBehaviour
 {
-    public GameObject Heart1, Heart2, Heart3;
-    public int hearts = 3;
+    public GameObject Heart1, Heart2, Heart3; //The 3 hearts at the top left of the screen
+    public int hearts; //The player's lives
 
     void Start()
     {
-        Heart1.gameObject.SetActive(true);
-        Heart2.gameObject.SetActive(true);
-        Heart3.gameObject.SetActive(true);
+        //At the start of the level, set lives to 3
+        hearts = 3;
     }
 
     void Update()
     {
-        if (hearts > 3)
+        if (hearts > 3) //This is here to make sure that the player never has more than 3 lives
         {
             hearts = 3;
         }
 
-        switch (hearts)
+        switch (hearts) //Switch statement for how many lives the player has
         {
             case 0:
                 Heart1.gameObject.SetActive(false);

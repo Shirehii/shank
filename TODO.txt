@@ -1,7 +1,7 @@
 FIX:
 - fix krispy tiles
 - Clean up code and make UML diagrams
-- Comment on code (LEFT: Elevator, Lives, Collectibles, PlayerController)
+- Comment on code (LEFT: Elevator, Collectibles, PlayerController)
 
 do not question the floating pizzas
 
