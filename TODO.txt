@@ -1,4 +1,4 @@
 - fix krispy tiles
 - fix level 5 bug in build
-- Clean up code and make UML diagrams
+- Make sure all UI has right images & sound effects
 - Record game demo
