@@ -1,13 +1,4 @@
-FIX:
 - fix krispy tiles
+- fix level 5 bug in build
 - Clean up code and make UML diagrams
-- Comment on code (LEFT: Elevator, Collectibles, PlayerController)
-
-do not question the floating pizzas
-
-LEVEL THEMES:
-1- Competition room
-2- Alfonso's kitchen
-3- Key room??
-4- Salsa pot
-5- Ricardo's kitchen
+- Record game demo

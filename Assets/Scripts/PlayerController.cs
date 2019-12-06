@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public GameObject leg;
     private AudioSource source;
 
+    //Audio clips
     public AudioClip heal;
     public AudioClip damage;
     public AudioClip death;
@@ -20,15 +21,17 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed = 350f;
 
     //Variables for player states, mostly used in animation controller
-    public bool idle;
-    public bool moving;
+    public bool idle = true;
+    public bool moving = false;
     public bool dead = false;
     public bool paused = false;
     public bool won = false;
+
+    //Movement & Jumping variables
     public bool isGrounded; //to check if the player is touching the ground
+    private bool jumpNow = false;
 
     //Mechanics variables
-    private bool jumpNow = false;
     private float lastDirectionPressed = 1;
     public int points = 0;
     public Lives lives;
@@ -40,7 +43,6 @@ public class PlayerController : MonoBehaviour
     public GameObject gameOverPanel;
 
 
-    //Initializes when the script starts
     void Start()
     {
         //Get Components
@@ -49,23 +51,29 @@ public class PlayerController : MonoBehaviour
         lives = GameObject.FindGameObjectWithTag("Collectibles").GetComponent<Lives>();
     }
 
-    //Player Input
-    void Update()
+    void Update() //Player Input
     {
-        if (!dead && !paused && !won) //If player isn't dead and game isn't paused, then check for movement input
+        //--MOVEMENT--
+        if (!dead && !paused && !won) //If player isn't dead, game isn't paused, and level isn't cleared then check for movement input
         {
-            if (Input.GetAxis("Vertical") > 0 && isGrounded) //If the model is touching the ground and the player pressed the up button...
+            if (Input.GetAxis("Vertical") > 0 && isGrounded) //If the model is touching the ground and the player presses the up button...
             {
-                jumpNow = true;
+                jumpNow = true; //...Jump
+                source.PlayOneShot(jump); //Play jump sound
             }
 
             if (Input.GetAxis("Horizontal") != 0) //If the player presses any of the horizontal axis buttons...
             { 
-                moving = true;
-                if (isGrounded && !source.isPlaying)
+                moving = true; //...Move
+                if (isGrounded && !source.isPlaying) //Play walking sound
                 {
                     source.PlayOneShot(walk);
                 }
+            }
+
+            if (Input.GetAxisRaw("Horizontal") == 0) //If the user isn't pressing the left or right keys...
+            {
+                moving = false; //...Don't move
             }
 
             if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetAxisRaw("Horizontal") != lastDirectionPressed) //For flipping the player sprite
@@ -73,13 +81,9 @@ public class PlayerController : MonoBehaviour
                 Flip();
                 lastDirectionPressed = Input.GetAxisRaw("Horizontal");
             }
-
-            if (Input.GetAxisRaw("Horizontal") == 0)
-            {
-                moving = false;
-            }
         }
 
+        //--UI--
         if (Input.GetKeyDown(KeyCode.P) && !dead && !paused) //For Pausing
         {
             paused = true;
@@ -94,43 +98,36 @@ public class PlayerController : MonoBehaviour
             pauseText.text = "Press P to Pause";
             rig.bodyType = RigidbodyType2D.Dynamic;
         }
-
-        //Death
-        if (dead == true)
+        
+        if (dead == true) //For Game Over
         {
             gameOverPanel.gameObject.SetActive(true);
             rig.bodyType = RigidbodyType2D.Static;
         }
     }
 
-    private void FixedUpdate() //Physics stuff goes here
+    private void FixedUpdate() //Movement physics
     {
-        if (moving)
+        if (moving) //Moving
         {
-            rig.velocity = (new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rig.velocity.y)); //...move the model to the direction the player presses, while retaining the vertical velocity of the rigidbody
+            Move();
         }
 
-        if (jumpNow)
+        if (jumpNow) //Jumping
         {
-            rig.AddForce(new Vector2(0, jumpSpeed)); //...Add a vertical force to the model
-            isGrounded = false;
-            source.PlayOneShot(jump);
-            jumpNow = false;
+            Jump();
         }
     }
-
-    //Trigger stuff
-    void OnTriggerEnter2D(Collider2D trigger)
+    
+    void OnTriggerEnter2D(Collider2D trigger) //Triggers
     {
-        //Destroy secret wall
-        if (trigger.gameObject.tag == "DestroyWall")
+        if (trigger.gameObject.tag == "DestroyWall") //For destroying secret walls
         {
             Destroy(GameObject.FindGameObjectWithTag("DestroyWall"));
             Destroy(trigger.gameObject);
         }
-
-        //Winning
-        if (trigger.gameObject.tag == "Win" && !dead)
+        
+        if (trigger.gameObject.tag == "Win" && !dead) //Winning
         {
             source.PlayOneShot(damage);
             winPanel.gameObject.SetActive(true);
@@ -138,40 +135,47 @@ public class PlayerController : MonoBehaviour
             won = true;
             Destroy(trigger.gameObject);
         }
-
-        //Points
-        if (trigger.gameObject.tag == "Point")
+        
+        if (trigger.gameObject.tag == "Point") //Getting points
         {
             source.PlayOneShot(point);
             points += 1;
-            Debug.Log(points);
             trigger.gameObject.SetActive(false);
         }
-
-        //Adding HP
-        if (trigger.gameObject.tag == "Heal")
+        
+        if (trigger.gameObject.tag == "Heal") //Healing
         {
             lives.hearts += 1;
             source.PlayOneShot(heal);
             trigger.gameObject.SetActive(false);
         }
-
-        //Death
-        if (trigger.gameObject.tag == "Enemy" && lives.hearts > 0)
+        
+        if (trigger.gameObject.tag == "Enemy" && lives.hearts > 0) //Taking damage
         {
             lives.hearts -= 1;
             source.PlayOneShot(damage);
             trigger.gameObject.SetActive(false);
         }
-        else if (trigger.gameObject.tag == "Enemy" && lives.hearts == 0)
+        else if (trigger.gameObject.tag == "Enemy" && lives.hearts == 0) //Death
         {
             dead = true;
             source.PlayOneShot(death);
         }
     }
 
-    //Method to use to flip the player sprite
-    void Flip()
+    void Move() //Moving (horizontally)
+    {
+        rig.velocity = (new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rig.velocity.y));
+    }
+
+    void Jump() //Jumping
+    {
+        rig.AddForce(new Vector2(0, jumpSpeed)); //Add a vertical force to the model
+        isGrounded = false; //Mark player as not grounded
+        jumpNow = false; //Don't jump again
+    }
+
+    void Flip() //Method to use to flip the player sprite
     {
         Vector3 Scale = transform.localScale;
         Scale.x *= -1;

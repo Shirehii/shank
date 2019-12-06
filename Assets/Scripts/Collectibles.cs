@@ -21,21 +21,21 @@ public class Collectibles : MonoBehaviour
 
     void Update()
     {
-        t += Time.deltaTime / timeToReachTarget;
+        t += Time.deltaTime / timeToReachTarget; //Time elapsed
 
-        if (direction == 1)
+        if (direction == 1) //Go up
         {
             transform.position = Vector3.Lerp(startingPosition, targetPosition, t);
-            if (transform.position == targetPosition)
+            if (transform.position == targetPosition) //If the target position is reached, switch direction and reset time elapsed
             {
                 direction *= -1;
                 t = 0;
             }
         }
-        else if (direction == -1)
+        else //Go down
         {
             transform.position = Vector3.Lerp(targetPosition, startingPosition, t);
-            if (transform.position == startingPosition)
+            if (transform.position == startingPosition) //If the starting position is reached, switch direction and reset time elapsed
             {
                 direction *= -1;
                 t = 0;
