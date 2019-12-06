@@ -29,6 +29,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -1027,4 +1028,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/3.unity
   - Assets/Scenes/4.unity
   - Assets/Scenes/5.unity
-  playerPath: C:/Users/AMARGA200/Documents/GitHub/shank/Builds/shank.exe
+  playerPath: D:/yeet/shank/Builds/shank.exe
