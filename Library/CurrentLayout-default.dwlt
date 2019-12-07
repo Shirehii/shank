@@ -501,7 +501,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 28efffff5aefffffa8f2ffff2af5ffff44f7ffff28f9ffff44faffff48faffff6afbffff
+      m_ExpandedIDs: 84edffffbaedffff08f1ffff8af3ffffa4f5ffff88f7ffffa4f8ffffa8f8ffff42fbffffb64100002e420000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -602,19 +602,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Graphics/Atlas2
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Graphics/Atlas2
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\yeet\shank
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 84400000
-    m_LastClickedID: 16516
+    m_SelectedIDs: 643d0000
+    m_LastClickedID: 15716
     m_ExpandedIDs: 000000005c2d0000c02e00008e3300008a3e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -816,9 +816,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 8.999857, y: 57.219376, z: -165.02539}
+    m_Target: {x: 471, y: 265, z: 0}
     speed: 2
-    m_Value: {x: 8.999857, y: 57.219376, z: -165.02539}
+    m_Value: {x: 470.99997, y: 265, z: -0.00000983628}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -851,9 +851,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 13.034535
+    m_Target: 1303.3201
     speed: 2
-    m_Value: 13.034535
+    m_Value: 1303.32
   m_Ortho:
     m_Target: 1
     speed: 2
