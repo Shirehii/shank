@@ -1,4 +1,2 @@
 - fix krispy tiles
-- fix level 5 bug in build
-- Make sure all UI has right images & sound effects
 - Record game demo

@@ -6,8 +6,8 @@ ScriptsOnlyBuild:
     - CheckForGround
     - ClickToLoadScene
     - ClickToQuit
-    - Collectibles
     - Elevator
+    - Float
     - Lives
     - PlayerController
     - Points
@@ -29,6 +29,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -808,7 +809,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Collectibles
+    className: Float
   - hash:
       serializedVersion: 2
       Hash: 27ebaa633e4f4014a4763e0bff2ae3e8
