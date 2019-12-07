@@ -104385,6 +104385,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
       objectReference: {fileID: 0}
+    - target: {fileID: 5966419376964476614, guid: f2487d2eed1b91046ae4073cd36355d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6482322040699776154, guid: f2487d2eed1b91046ae4073cd36355d1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -104555,6 +104560,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4684722794612281845, guid: e78beb1f61623534aa58a9aa283ae192,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4684722794423695344, guid: e78beb1f61623534aa58a9aa283ae192,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -104630,11 +104640,6 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 1052667573}
-    - target: {fileID: 4684722794612281845, guid: e78beb1f61623534aa58a9aa283ae192,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 4684722794336242087, guid: e78beb1f61623534aa58a9aa283ae192,
         type: 3}
       propertyPath: m_SortingLayerID
