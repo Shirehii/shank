@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
     void Update() //Player Input
     {
         //--MOVEMENT--
-        if (!dead && !paused && !won) //If player isn't dead, game isn't paused, and level isn't cleared then check for movement input
+        if (rig.bodyType == RigidbodyType2D.Dynamic && !dead) //If player isn't dead, game isn't paused, and level isn't cleared then check for movement input
         {
             if (Input.GetAxis("Vertical") > 0 && isGrounded) //If the model is touching the ground and the player presses the up button...
             {
